@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML学习(II) - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的 排版、布局等内容会在后续的文章里逐一说明。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML学习(II)">
+<meta property="og:url" content="http://yoursite.com/2017/03/23/HTML学习（II）/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的 排版、布局等内容会在后续的文章里逐一说明。">
+<meta property="og:image" content="http://img.mukewang.com/52fde5c30001b0fe03030117.jpg">
+<meta property="og:updated_time" content="2017-03-23T12:31:49.304Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML学习(II)">
+<meta name="twitter:description" content="本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的 排版、布局等内容会在后续的文章里逐一说明。">
+<meta name="twitter:image" content="http://img.mukewang.com/52fde5c30001b0fe03030117.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-HTML学习（II）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML学习(II)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/03/23/HTML学习（II）/" class="article-date">
+  <time datetime="2017-03-22T16:00:00.000Z" itemprop="datePublished">2017-03-23</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的 排版、布局等内容会在后续的文章里逐一说明。</p>
+<a id="more"></a>
+<hr>
+<p>##（CSS部分）</p>
+<hr>
+<p><strong>css样式及选择器部分：</strong></p>
+<p>1.css 样式由选择符和声明组成，而声明又由属性和值组成，如图：<br><img src="http://img.mukewang.com/52fde5c30001b0fe03030117.jpg" alt="css样式图解"><br>选择符：又称选择器，指明网页中要应用样式规则的元素；<br>声明：在英文大括号“｛｝”中的的就是声明，属性和值之间用英文冒号“：”分隔。当有多条声明时，中间可以英文分号“;”分隔。【最后一条声明可以没有分号，但是为了以后修改方便，一般也加上分号】<br>2.注释语句：用<code>/*注释语句*/</code>来标明（html中使用<code>&lt;!--注释语句--&gt;</code>)。<br>3.样式的位置：内联式、嵌入式、外部式。<br>(1)内联式：直接写在HTML标签中。如：<br><code>&lt;p style=&quot;color:red;font-size:12px&quot;&gt;这里文字是红色。&lt;/p&gt;</code><br>(2)嵌入式：把css样式代码写在<code>&lt;style type=&quot;text/css&quot;&gt;&lt;/style&gt;</code>标签之间，一般情况下嵌入式css样式写在<code>&lt;head&gt;&lt;/head&gt;</code>之间。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">span&#123;</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p>(3)外部式：把css代码写一个单独的外部文件中，这个css样式文件以“.css”为扩展名，在<code>&lt;head&gt;</code>内（不是在<code>&lt;style&gt;</code>标签内）使用<code>&lt;link&gt;</code>标签将css样式文件链接到HTML文件内。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link href=&quot;base.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>（<code>rel=&quot;stylesheet&quot;</code> <code>type=&quot;text/css&quot;</code> 是固定写法不可修改）<br>(4)优先级一般为：内联式 &gt; 嵌入式 &gt; 外部式（权值相等时）。<br>4.选择器：选择器指明了{}中的样式的作用对象，即样式作用于网页中的哪些元素。<br>5.选择器的分类：<br>(1)标签选择器：为××标签设置样式，如<code>&lt;body&gt;、&lt;h1&gt;、&lt;p&gt;</code>等。<br>(2)类选择器：<br>·语法为<code>.类选器名称{css样式代码;}</code>【英文圆点开头】；<br>·使用方法：<br>第一步：使用合适的标签把要修饰的内容标记起来，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span&gt;胆小如鼠&lt;/span&gt;</div></pre></td></tr></table></figure>
+<p>第二步：使用class=”类选择器名称”为标签设置一个类，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span class=&quot;stress&quot;&gt;胆小如鼠&lt;/span&gt;</div></pre></td></tr></table></figure>
+<p>第三步：设置类选器css样式，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.stress&#123;color:red;&#125;</div></pre></td></tr></table></figure>
+<p>(3)ID选择器：与类选择器相似，不同点为一下两点：为标签设置id=”ID名称”；ID选择符的前面是（#）号。<br>【ID选择器只能在文档中使用一次】<br>【可以使用类选择器词列表方法为一个元素同时设置多个样式，如<br><code>&lt;span class=&quot;stress bigsize&quot;&gt;三年级&lt;/span&gt;</code>，而不能使用 ID 词列表】<br>(4)子选择器：用于选择指定标签元素的第一代子元素，通过“&gt;”进行选择。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.food&gt;li&#123;border:1px solid red;&#125;</div></pre></td></tr></table></figure>
+<p>会使class名为food下的子元素li（水果、蔬菜）加入红色实线边框。<br>(5)包含（后代）选择器：用于选择指定标签元素下的后辈元素，通过空格选择。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.food li&#123;border:1px solid red;&#125;</div></pre></td></tr></table></figure>
+<p>会使水果类目下的苹果、香蕉也加入红色实线边框。<br>【&gt;作用于元素的第一代后代，空格作用于元素的所有后代】<br>(6)通用选择器：使用一个（*）号指定，它的作用是匹配html中所有标签元素。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`* &#123;color:red;&#125;`</div></pre></td></tr></table></figure>
+<p>会使html中任意标签元素字体颜色全部设置为红色。<br>6.伪类选择符：给html不存在的标签（标签的某种状态）设置样式，比如说我们给html中一个标签元素的鼠标滑过的状态来设置字体颜色：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a:hover&#123;color:red;&#125;</div></pre></td></tr></table></figure></p>
+<p>会使<code>&lt;a&gt;</code> 标签鼠标滑过的状态设置字体颜色变红。<br>7.分组选择符：为html中多个标签元素设置同一个样式时，可以使用分组选择符（，），如下（为h1、span标签同时设置字体颜色为红色）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h1,span&#123;color:red;&#125;</div></pre></td></tr></table></figure></p>
+<p><br><br><br>后面会有css的性质、排版、布局等大块的内容，这次先到这儿啦。<br>未完待续~撒花~</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/21/HTML学习（I）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML学习(I)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>
