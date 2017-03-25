@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML学习(III) - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本篇内容是关于css样式的性质、排版、盒模型等内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML学习(III)">
+<meta property="og:url" content="http://yoursite.com/2017/03/25/HTML学习（III）/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="本篇内容是关于css样式的性质、排版、盒模型等内容。">
+<meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%BD%E9%AB%98.jpg">
+<meta property="og:updated_time" content="2017-03-25T10:00:16.130Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML学习(III)">
+<meta name="twitter:description" content="本篇内容是关于css样式的性质、排版、盒模型等内容。">
+<meta name="twitter:image" content="http://on9eybn3x.bkt.clouddn.com/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%BD%E9%AB%98.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-HTML学习（III）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML学习(III)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/03/25/HTML学习（III）/" class="article-date">
+  <time datetime="2017-03-24T16:00:00.000Z" itemprop="datePublished">2017-03-25</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇内容是关于css样式的性质、排版、盒模型等内容。</p>
+<a id="more"></a>
+<hr>
+<p><strong>css性质：</strong><br>1.继承：样式不仅应用于某个特定html标签元素，而且应用于其后代，如<code>&lt;p&gt;</code>。但有一些css样式是不具有继承性的，如<code>border:1px solid red;</code>。<br>2.权值的影响。<br>3.层叠：当两个样式权值相同时，后面的样式会覆盖前面的样式。<br>4.重要：为某些样式设置具有最高权值，如<code>p{color:red!important;}</code>。</p>
+<hr>
+<p><strong>css排版：</strong></p>
+<p>1.文字的字体、字号、颜色：如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">body&#123;font-family:&quot;Microsoft Yahei&quot;;</div><div class="line">     font-size:12px;color:#666；&#125;</div></pre></td></tr></table></figure>
+<p>（注意不要设置不常用的字体，因为用户是否可以看到你设置的字体样式取决于用户本地电脑上是否安装你设置的字体）</p>
+<p>2.文字的粗体、斜体、下划线、删除线：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">body&#123;font-weight:bold;</div><div class="line">     font-style:italic;</div><div class="line">     text-decoration:underline;</div><div class="line">     text-decoration:line-through;&#125;</div></pre></td></tr></table></figure>
+<p>3.段落的缩进：<code>p{text-indent:2em;}</code> 为缩进两个文字大小（2em）。</p>
+<p>4.段落的行高（行间距）：<code>p{line-height:1.5em;}</code> 为1.5倍行高。</p>
+<p>5.网页设置中的文字间隔或者字母间隔：<br>(1)文字、<strong>字母</strong>间的间隔：<code>h1{letter-spacing:50px;}</code><br>(2)英文<strong>单词</strong>间的间隔：<code>h1{word-spacing:50px;}</code></p>
+<p>6.段落的对齐：居中、居右或居左。如<code>h1{text-align:center;}</code></p>
+<hr>
+<p><strong>css盒模型：</strong></p>
+<p>1.css元素：分为块状(级)元素、内联元素(又叫行内元素)(inline)和内联块状元素。<br>(1)块状(级)元素：每个块级元素都从新的一行开始，并且其后的元素也另起一行；元素的高度、宽度、行高以及顶和底边距都可设置；元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致）。<br>（可通过<code>a{display:block;}</code>将元素设置为块级元素）<br>常用的块状元素有：<code>&lt;div&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>、<code>&lt;ol&gt;</code>、<code>&lt;ul&gt;</code>、<code>&lt;dl&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;address&gt;</code>、<code>&lt;blockquote&gt;</code> 、<code>&lt;form&gt;</code>。<br>(2)内联元素：和其他元素都在一行上；元素的高度、宽度及顶部和底部边距不可设置；元素的宽度就是它包含的文字或图片的宽度，不可改变。<br>（可通过<code>a{display:inline;}</code>将元素设置为内联元素）<br>常用的内联元素有： <code>&lt;a&gt;</code>、<code>&lt;span&gt;</code>、<code>&lt;br&gt;</code>、<code>&lt;i&gt;</code>、<code>&lt;em&gt;</code>、<code>&lt;strong&gt;</code>、<code>&lt;label&gt;</code>、<code>&lt;q&gt;</code>、<code>&lt;var&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;code&gt;</code>。<br>(3)内联块状元素：和其他元素都在一行上；元素的高度、宽度、行高以及顶和底边距都可设置。<br>（可通过<code>a{display:inline-block;}</code>将元素设置为内联元素）<br>常用的内联块状元素有：<code>&lt;img&gt;</code>、<code>&lt;input&gt;</code>。</p>
+<p>2.盒模型：就是长得像一个盒子一样【摊手】有边有内容的块级元素。<br>包括内容（文字、图片、标签元素）、边框（border）、内填充（padding）、外边距（边界）（盒子与另一个盒子模型之间的距离，margin），边框、内填充与外边距都有四个方向，如padding-left、padding-right、padding-top、padding-bottom。</p>
+<p>3.盒子模型的边框：有粗细、样式和颜色三个属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    border-width:2px;</div><div class="line">    border-style:solid;</div><div class="line">    border-color:red;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>以上代码可简写为：<code>div{border-width:2px solid red;}</code><br>若要单独设置下边框，则：<code>div{border-bottom:2px solid red;}</code><br>(1)border-style（边框样式）常见样式有：<br>dashed（虚线）| dotted（点线）| solid（实线）。<br>(2)border-color（边框颜色）中的颜色可设置为十六进制颜色，如:<br>border-color:#888;//前面的井号不要忘掉。<br>(3)border-width（边框宽度）中的宽度也可以设置为：<br>thin | medium | thick（但不是很常用），最常还是用象素（px）。</p>
+<p>4.盒子模型的宽高：css内定义的宽（width）和高（height），指的是填充以里的内容范围。</p>
+<p><img src="http://on9eybn3x.bkt.clouddn.com/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%BD%E9%AB%98.jpg" alt="盒子模型的宽高"></p>
+<p>5.盒子模型的填充：分为上、右、下、左(顺时针)，如 <code>div{padding:20px 10px 15px 30px;}</code>。<br>若上、右、下、左的填充都为10px，可以写为：<code>div{padding:10px;}</code>。<br>若上下填充一样为10px，左右一样为20px，可以写成：<code>div{padding:10px 20px;}</code>。</p>
+<p>6.盒子模型的边界（外边距，margin）：元素与其它元素之间的距离，分为上、右、下、左。（同填充）<br>如 <code>div{margin:20px 10px 15px 30px;}</code>。<br><br><br><br>这一部分的css语法内容先到这里，基础部分的内容就差css的布局和样式设置啦~撒花~</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/25/《人间》/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《人间》—— 王菲&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

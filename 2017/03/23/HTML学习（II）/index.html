@@ -5,17 +5,17 @@
   
   <title>HTML学习(II) - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的 排版、布局等内容会在后续的文章里逐一说明。">
+  <meta name="description" content="本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的排版、布局等内容会在后续的文章里逐一说明。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML学习(II)">
 <meta property="og:url" content="http://yoursite.com/2017/03/23/HTML学习（II）/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的 排版、布局等内容会在后续的文章里逐一说明。">
+<meta property="og:description" content="本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的排版、布局等内容会在后续的文章里逐一说明。">
 <meta property="og:image" content="http://img.mukewang.com/52fde5c30001b0fe03030117.jpg">
-<meta property="og:updated_time" content="2017-03-25T07:25:59.744Z">
+<meta property="og:updated_time" content="2017-03-25T09:58:26.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML学习(II)">
-<meta name="twitter:description" content="本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的 排版、布局等内容会在后续的文章里逐一说明。">
+<meta name="twitter:description" content="本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的排版、布局等内容会在后续的文章里逐一说明。">
 <meta name="twitter:image" content="http://img.mukewang.com/52fde5c30001b0fe03030117.jpg">
   
   
@@ -85,15 +85,19 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的 排版、布局等内容会在后续的文章里逐一说明。</p>
+        <p>本篇内容是css语法学习中的一些基本知识，包括css样式及选择器，关于css的排版、布局等内容会在后续的文章里逐一说明。</p>
 <a id="more"></a>
 <hr>
 <p><strong>css样式及选择器部分：</strong></p>
-<p>1.css 样式由选择符和声明组成，而声明又由属性和值组成，如图：<br><img src="http://img.mukewang.com/52fde5c30001b0fe03030117.jpg" alt="css样式图解"><br>选择符：又称选择器，指明网页中要应用样式规则的元素；<br>声明：在英文大括号“｛｝”中的的就是声明，属性和值之间用英文冒号“：”分隔。当有多条声明时，中间可以英文分号“;”分隔。【最后一条声明可以没有分号，但是为了以后修改方便，一般也加上分号】<br>2.注释语句：用<code>/*注释语句*/</code>来标明（html中使用<code>&lt;!--注释语句--&gt;</code>)。<br>3.样式的位置：内联式、嵌入式、外部式。<br>(1)内联式：直接写在HTML标签中。如：<br><code>&lt;p style=&quot;color:red;font-size:12px&quot;&gt;这里文字是红色。&lt;/p&gt;</code><br>(2)嵌入式：把css样式代码写在<code>&lt;style type=&quot;text/css&quot;&gt;&lt;/style&gt;</code>标签之间，一般情况下嵌入式css样式写在<code>&lt;head&gt;&lt;/head&gt;</code>之间。如：</p>
+<p>1.css 样式由选择符和声明组成，而声明又由属性和值组成，如图：<br><img src="http://img.mukewang.com/52fde5c30001b0fe03030117.jpg" alt="css样式图解"><br>选择符：又称选择器，指明网页中要应用样式规则的元素；<br>声明：在英文大括号“｛｝”中的的就是声明，属性和值之间用英文冒号“：”分隔。当有多条声明时，中间可以英文分号“;”分隔。【最后一条声明可以没有分号，但是为了以后修改方便，一般也加上分号】</p>
+<p>2.注释语句：用<code>/*注释语句*/</code>来标明（html中使用<code>&lt;!--注释语句--&gt;</code>)。</p>
+<p>3.样式的位置：内联式、嵌入式、外部式。<br>(1)内联式：直接写在HTML标签中。如：<br><code>&lt;p style=&quot;color:red;font-size:12px&quot;&gt;这里文字是红色。&lt;/p&gt;</code><br>(2)嵌入式：把css样式代码写在<code>&lt;style type=&quot;text/css&quot;&gt;&lt;/style&gt;</code>标签之间，一般情况下嵌入式css样式写在<code>&lt;head&gt;&lt;/head&gt;</code>之间。如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">span&#123;</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <p>(3)外部式：把css代码写一个单独的外部文件中，这个css样式文件以“.css”为扩展名，在<code>&lt;head&gt;</code>内（不是在<code>&lt;style&gt;</code>标签内）使用<code>&lt;link&gt;</code>标签将css样式文件链接到HTML文件内。如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link href=&quot;base.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</div></pre></td></tr></table></figure>
-<p>（<code>rel=&quot;stylesheet&quot;</code> <code>type=&quot;text/css&quot;</code> 是固定写法不可修改）<br>(4)优先级一般为：内联式 &gt; 嵌入式 &gt; 外部式（权值相等时）。<br>4.选择器：选择器指明了{}中的样式的作用对象，即样式作用于网页中的哪些元素。<br>5.选择器的分类：<br>(1)标签选择器：为××标签设置样式，如<code>&lt;body&gt;、&lt;h1&gt;、&lt;p&gt;</code>等。<br>(2)类选择器：<br>·语法为<code>.类选器名称{css样式代码;}</code>【英文圆点开头】；<br>·使用方法：<br>第一步：使用合适的标签把要修饰的内容标记起来，如下：</p>
+<p>（<code>rel=&quot;stylesheet&quot;</code> <code>type=&quot;text/css&quot;</code> 是固定写法不可修改）<br>(4)优先级一般为：内联式 &gt; 嵌入式 &gt; 外部式（权值相等时）。</p>
+<p>4.选择器：选择器指明了{}中的样式的作用对象，即样式作用于网页中的哪些元素。</p>
+<p>5.选择器的分类：<br>(1)标签选择器：为××标签设置样式，如<code>&lt;body&gt;、&lt;h1&gt;、&lt;p&gt;</code>等。<br>(2)类选择器：<br>·语法为<code>.类选器名称{css样式代码;}</code>【英文圆点开头】；<br>·使用方法：<br>第一步：使用合适的标签把要修饰的内容标记起来，如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span&gt;胆小如鼠&lt;/span&gt;</div></pre></td></tr></table></figure>
 <p>第二步：使用class=”类选择器名称”为标签设置一个类，如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span class=&quot;stress&quot;&gt;胆小如鼠&lt;/span&gt;</div></pre></td></tr></table></figure>
@@ -104,9 +108,11 @@
 <p>会使class名为food下的子元素li（水果、蔬菜）加入红色实线边框。<br>(5)包含（后代）选择器：用于选择指定标签元素下的后辈元素，通过空格选择。如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.food li&#123;border:1px solid red;&#125;</div></pre></td></tr></table></figure>
 <p>会使水果类目下的苹果、香蕉也加入红色实线边框。<br>【&gt;作用于元素的第一代后代，空格作用于元素的所有后代】<br>(6)通用选择器：使用一个（*）号指定，它的作用是匹配html中所有标签元素。如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`* &#123;color:red;&#125;`</div></pre></td></tr></table></figure>
-<p>会使html中任意标签元素字体颜色全部设置为红色。<br>6.伪类选择符：给html不存在的标签（标签的某种状态）设置样式，比如说我们给html中一个标签元素的鼠标滑过的状态来设置字体颜色：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a:hover&#123;color:red;&#125;</div></pre></td></tr></table></figure></p>
-<p>会使<code>&lt;a&gt;</code> 标签鼠标滑过的状态设置字体颜色变红。<br>7.分组选择符：为html中多个标签元素设置同一个样式时，可以使用分组选择符（，），如下（为h1、span标签同时设置字体颜色为红色）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h1,span&#123;color:red;&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* &#123;color:red;&#125;</div></pre></td></tr></table></figure>
+<p>会使html中任意标签元素字体颜色全部设置为红色。</p>
+<p>6.伪类选择符：给html不存在的标签（标签的某种状态）设置样式，比如说我们给html中一个标签元素的鼠标滑过的状态来设置字体颜色：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a:hover&#123;color:red;&#125;</div></pre></td></tr></table></figure></p>
+<p>会使<code>&lt;a&gt;</code> 标签鼠标滑过的状态设置字体颜色变红。</p>
+<p>7.分组选择符：为html中多个标签元素设置同一个样式时，可以使用分组选择符（，），如下（为h1、span标签同时设置字体颜色为红色）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h1,span&#123;color:red;&#125;</div></pre></td></tr></table></figure></p>
 <p><br><br><br>后面会有css的性质、排版、布局等大块的内容，这次先到这儿啦。<br>未完待续~撒花~</p>
 
       
