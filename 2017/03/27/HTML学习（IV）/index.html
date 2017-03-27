@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML学习(IV) - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML学习(IV)">
+<meta property="og:url" content="http://yoursite.com/2017/03/27/HTML学习（IV）/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。">
+<meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E5%B1%82%E6%A8%A1%E5%9E%8B-%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg">
+<meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E9%85%8D%E8%89%B2%E8%A1%A8.jpg">
+<meta property="og:updated_time" content="2017-03-27T14:47:30.861Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML学习(IV)">
+<meta name="twitter:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。">
+<meta name="twitter:image" content="http://on9eybn3x.bkt.clouddn.com/%E5%B1%82%E6%A8%A1%E5%9E%8B-%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-HTML学习（IV）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML学习(IV)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/03/27/HTML学习（IV）/" class="article-date">
+  <time datetime="2017-03-26T16:00:00.000Z" itemprop="datePublished">2017-03-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。</p>
+<a id="more"></a>
+<hr>
+<p><strong>css布局模型：</strong></p>
+<p>1.布局模型-&gt;布局模板。</p>
+<p>2.css包含3种基本的布局模型：Flow、Layer 和 Float。<br>在网页中，元素有三种布局模型：流动模型（Flow）、浮动模型 (Float)、层模型（Layer）。</p>
+<p>3.流动模型：默认的网页布局模式。在默认状态下，块状元素的宽度都为100%，<strong>块状元素</strong>都会在所处的包含元素内自上而下按顺序垂直延伸分布；<strong>内联元素</strong>都会在所处的包含元素内从左到右水平分布显示，而不是像块状元素一样独占一行。【块状元素与内联元素的介绍见上篇】</p>
+<p>4.浮动模型：可以实现让两个块状元素并排显示。<br>如下代码可以实现两个 div 元素一行显示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    border:2px red solid;</div><div class="line">    float:left;【float:right;】</div><div class="line">&#125;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>若要一左一右显示，则可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    border:2px red solid;</div><div class="line">&#125;</div><div class="line">#div1&#123;float:left;&#125;</div><div class="line">#div2&#123;float:right;&#125;</div></pre></td></tr></table></figure>
+<p>5.层模型</p>
+<p>(1)让html元素在网页中精确定位，就像图像软件PhotoShop中的图层一样可以对每个图层能够精确定位操作。有三种形式：绝对定位(position: absolute)、相对定位(position: relative)、固定定位(position: fixed)。</p>
+<p>(2)绝对定位：设置 <code>position:absolute;</code> ,然后使用left、right、top、bottom属性相对于其最接近的一个具有定位属性的父包含块进行绝对定位。如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。<br>如下，可以实现div元素相对于浏览器窗口向右移动100px，向下移动50px。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    border:2px red solid;</div><div class="line">    position:absolute;</div><div class="line">    left:100px;</div><div class="line">    top:50px;</div><div class="line">&#125;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>(3)相对定位：设置 <code>position:relative;</code> ，过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。<br>如下可以实现相对于以前位置向下移动50px，向右移动100px;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#div1&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    border:2px red solid;</div><div class="line">    position:relative;</div><div class="line">    left:100px;</div><div class="line">    top:50px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div id=&quot;div1&quot;&gt;呀呀呀&lt;/div&gt;&lt;span&gt;啦啦啦&lt;/span&gt;</div></pre></td></tr></table></figure>
+<p>显示效果如下：</p>
+<p><img src="http://on9eybn3x.bkt.clouddn.com/%E5%B1%82%E6%A8%A1%E5%9E%8B-%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg" alt="层模型-相对定位"><br>（黑色方框为未定位之前，红框和文字均为相对定位之后）</p>
+<p>虽然div元素相对于以前的位置产生了偏移，但是div元素以前的位置还是保留着，所以后面的span元素是显示在了div元素以前位置的后面。</p>
+<p>(4)固定定位：设置 <code>position:fixed;</code> ，它的相对移动的坐标是视图（屏幕内的网页窗口）本身，固定定位的元素会始终位于浏览器窗口内视图的某个位置，不会随浏览器窗口的滚动条滚动而变化，不会受文档流动影响。<br>以下代码可以实现相对于浏览器视图向右移动100px，向下移动50px。并且拖动滚动条时位置固定不变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#div1&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    border:2px red solid;</div><div class="line">    position:fixed;</div><div class="line">    left:100px;</div><div class="line">    top:50px;</div><div class="line">&#125;</div><div class="line">&lt;p&gt;文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本。&lt;/p&gt;</div></pre></td></tr></table></figure>
+<p>(5)相对某一元素进行定位（absolute与relative组合使用）：父辈元素使用relative，子辈元素使用absolute。<br>如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;box1&quot;&gt;&lt;!--参照定位的元素--&gt;</div><div class="line">    &lt;div id=&quot;box2&quot;&gt;相对参照元素进行定位&lt;/div&gt;&lt;!--相对定位元素--&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>父辈元素box1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#box1&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    position:relative;        </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>子辈元素box2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#box2&#123;</div><div class="line">    position:absolute;</div><div class="line">    top:20px;</div><div class="line">    left:30px;         </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>css代码缩写：</strong></p>
+<p>1.盒模型代码的缩写：<br>（外边距(margin)、内边距(padding)和边框(border)设置，上右下左）</p>
+<p>(1)如果top、right、bottom、left的值相同，如下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">margin:10px 10px 10px 10px;</div></pre></td></tr></table></figure>
+<p>可缩写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">margin:10px;</div></pre></td></tr></table></figure>
+<p>(2)如果top和bottom值相同、left和 right的值相同，如下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">margin:10px 20px 10px 20px;</div></pre></td></tr></table></figure>
+<p>可缩写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">margin:10px 20px;</div></pre></td></tr></table></figure>
+<p>(3)如果left和right的值相同，如下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">margin:10px 20px 30px 20px;</div></pre></td></tr></table></figure>
+<p>可缩写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">margin:10px 20px 30px;</div></pre></td></tr></table></figure>
+<p>2.颜色值的缩写：设置的颜色是16进制的色彩值时，如果每两位的值相同，可以缩写一半。如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p&#123;color: #336699;&#125;</div></pre></td></tr></table></figure>
+<p>可以缩写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p&#123;color: #369;&#125;</div></pre></td></tr></table></figure>
+<p>3.字体设置的缩写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">    font-style:italic;</div><div class="line">    font-variant:small-caps; </div><div class="line">    font-weight:bold; </div><div class="line">    font-size:12px; </div><div class="line">    line-height:1.5em; </div><div class="line">    font-family:&quot;宋体&quot;,sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这么多行的代码可以缩写为一句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">    font:italic  small-caps  bold  12px/1.5em  &quot;宋体&quot;,sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>【在缩写时 font-size 与 line-height 中间要加入“/”斜扛。】</p>
+<hr>
+<p><strong>单位和值：</strong></p>
+<p>1.颜色值：三种设置方式。</p>
+<p>(1)英文命令，如 <code>p{color:red;}</code> 。</p>
+<p>(2)RGB，如 <code>p{color:rgb(133,45,200);}</code> ，每一项的值可以是 0~255 之间的整数，也可以是 0%~100% 的百分数。如 <code>p{color:rgb(20%,33%,25%);}</code> 。</p>
+<p>(3)十六进制，每一项的值由 0-255 变成了十六进制 00-ff。如 <code>p{color:#00ffff;}</code> 。</p>
+<p>附：配色表</p>
+<p><img src="http://on9eybn3x.bkt.clouddn.com/%E9%85%8D%E8%89%B2%E8%A1%A8.jpg" alt="配色表"></p>
+<p>2.长度值</p>
+<p>(1)像素，px。</p>
+<p>(2)em：本元素给定字体的 font-size 值，如果元素的 font-size 为 14px ，那么 1em = 14px；如果 font-size 为 18px，那么 1em = 18px。如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p&#123;font-size:12px;text-indent:2em;&#125;</div></pre></td></tr></table></figure>
+<p>上面代码就是可以实现段落首行缩进 24px（也就是两个字体大小的距离）。</p>
+<p>(3)百分比：如 <code>p{font-size:12px;line-height:130%}</code> 设置行高（行间距）为字体的130%（12 * 1.3 = 15.6px）。</p>
+<hr>
+<p><br><br>下篇会记到css样式设计的一些技巧。<br>这篇就到这啦~</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/25/HTML学习（III）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML学习(III)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>
