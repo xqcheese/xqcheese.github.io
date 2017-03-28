@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML学习(V) - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本篇是关于css样式的设计技巧。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML学习(V)">
+<meta property="og:url" content="http://yoursite.com/2017/03/28/HTML学习（V）/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="本篇是关于css样式的设计技巧。">
+<meta property="og:updated_time" content="2017-03-28T10:48:19.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML学习(V)">
+<meta name="twitter:description" content="本篇是关于css样式的设计技巧。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-HTML学习（V）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML学习(V)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/03/28/HTML学习（V）/" class="article-date">
+  <time datetime="2017-03-27T16:00:00.000Z" itemprop="datePublished">2017-03-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇是关于css样式的设计技巧。</p>
+<a id="more"></a>
+<hr>
+<p><strong>css样式设计技巧：</strong></p>
+<p><strong>单位！！单位！！！宽度长度的单位（比如px）不要忘了写！！！血的教训啊……</strong></p>
+<p>1.水平居中</p>
+<p>(1)行内元素：如果被设置元素为文本、图片等行内元素时，水平居中是通过给父元素设置 <code>text-align:center</code> 来实现的。如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">div&#123;</div><div class="line">    border:1px solid red;</div><div class="line">    margin:20px;</div><div class="line">&#125;</div><div class="line">.txtCenter&#123;</div><div class="line">	text-align:center;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">……</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;txtCenter&quot;&gt;我想要在父容器中水平居中显示。&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>(2)定宽块状元素：定宽块状元素即为宽度width为固定值的块状元素，设置“左右margin”值为“auto”来实现居中。如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    border:1px solid red;/*为了显示居中效果明显为 div 设置了边框*/</div><div class="line">    </div><div class="line">    width:200px;/*定宽*/</div><div class="line">    margin:20px auto;/* margin-left 与 margin-right 设置为 auto */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>【定的宽是div元素的宽，居中显示的是div元素。】</p>
+<p>(3)不定宽块状元素：有三种方法，如下</p>
+<p>·加入 table 标签：为需要设置的居中的元素外面加入一个 table 标签 ( 包括 <code>&lt;tbody&gt;</code>、<code>&lt;tr&gt;</code>、<code>&lt;td&gt;</code> )；为这个 table 设置“左右 margin 居中”（这个和定宽块状元素的方法一样）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">table&#123;</div><div class="line">    border:1px solid;</div><div class="line">    margin:0 auto;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p>·设置 <code>display: inline</code> ：改变<strong>块级元素</strong>的 display 为 inline 类型，然后使用 <code>text-align:center</code> 来实现居中效果。如下</p>
+<p>html代码为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;        </div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<p>css代码为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.container&#123;</div><div class="line">    text-align:center;</div><div class="line">&#125;</div><div class="line">/* margin:0;padding:0（消除文本与div边框之间的间隙）*/</div><div class="line">.container ul&#123;</div><div class="line">    list-style:none;</div><div class="line">    margin:0;</div><div class="line">    padding:0;</div><div class="line">    display:inline;</div><div class="line">&#125;</div><div class="line">/* margin-right:8px（设置li文本之间的间隔）*/</div><div class="line">.container li&#123;</div><div class="line">    margin-right:8px;</div><div class="line">    display:inline;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>·设置 <code>position:relative</code> 和 <code>left:50%</code> ：给父元素设置 float，然后给父元素设置 <code>position:relative</code> 和 <code>left:50%</code>，子元素设置 <code>position:relative</code> 和 <code>left: -50%</code> 来实现水平居中。如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    float:left;</div><div class="line">    position:relative;</div><div class="line">    left:50%</div><div class="line">&#125;</div><div class="line"></div><div class="line">.container ul&#123;</div><div class="line">    list-style:none;</div><div class="line">    margin:0;</div><div class="line">    padding:0;</div><div class="line">    </div><div class="line">    position:relative;</div><div class="line">    left:-50%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>【假设 | 为页面的中线，则第一次右移之后变为 |- -，第二次左移之后变为 -|- 】</p>
+<p>2.垂直居中</p>
+<p>(1)父元素高度确定的单行文本：设置父元素的 height 和 line-height 高度一致。</p>
+<p>(2)父元素高度确定的多行文本、图片等：两种设置方法。</p>
+<p>·使用插入 table (包括tbody、tr、td)标签，同时设置 <code>vertical-align：middle</code>。如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;wrap&quot;&gt;</div><div class="line">&lt;div&gt;</div><div class="line">    &lt;p&gt;看我是否可以居中。&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>（ td 标签默认情况下就默认设置了 vertical-align 为 middle，所以我们不需要显式地设置了。）</p>
+<p>·设置块级元素的 display 为 table-cell（设置为表格单元显示），激活 vertical-align 属性。如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.container&#123;</div><div class="line">    height:300px;</div><div class="line">    background:#ccc;</div><div class="line">    display:table-cell;/*兼容IE8以上及Chrome、Firefox*/</div><div class="line">    vertical-align:middle;/*兼容IE8以上及Chrome、Firefox*/</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<hr>
+<p><br> <br><br>这部分也结束了啊，最后这部分不是特别懂，也不怎么会用，多练练吧~加油呀</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/27/HTML学习（IV）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML学习(IV)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>
