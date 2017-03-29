@@ -12,7 +12,8 @@
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="本篇内容是关于css样式的性质、排版、盒模型等内容。">
 <meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%BD%E9%AB%98.jpg">
-<meta property="og:updated_time" content="2017-03-29T12:46:10.534Z">
+<meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E7%9B%92%E5%AD%903d%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:updated_time" content="2017-03-29T13:16:56.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML学习(III)">
 <meta name="twitter:description" content="本篇内容是关于css样式的性质、排版、盒模型等内容。">
@@ -113,14 +114,15 @@
 <p>2.盒模型：盒模型=网页布局的基石<br>包括盒子中的内容（文字、图片、标签元素，content）、边框（border）、内边距（padding）、外边距（边界）（盒子与另一个盒子模型之间的距离，margin），边框、内边距与外边距都有四个方向，如padding-left、padding-right、padding-top、padding-bottom。</p>
 <p>3.盒子模型的边框：有粗细、样式和颜色三个属性。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    border-width:2px;</div><div class="line">    border-style:solid;</div><div class="line">    border-color:red;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>以上代码可简写为：<code>div{border-width:2px solid red;}</code><br>若要单独设置下边框，则：<code>div{border-bottom:2px solid red;}</code></p>
+<p>以上代码可简写为：<code>div{border-width:2px solid red;}</code><br>【边框属性值设置中，这三个必须全部设置，否则边框无法显示。】<br>若要单独设置下边框，则：<code>div{border-bottom:2px solid red;}</code></p>
 <p>(1)border-style（边框样式）常见样式有：<br>dashed（虚线）| dotted（点线）| solid（实线）。</p>
 <p>(2)border-color（边框颜色）中的颜色可设置为十六进制颜色，如:<br>border-color:#888;//前面的井号不要忘掉。</p>
 <p>(3)border-width（边框宽度）中的宽度也可以设置为：<br>thin | medium | thick（但不是很常用），最常还是用象素（px）。</p>
 <p>4.盒子模型的宽高：css内定义的宽（width）和高（height），指的是填充以里的内容范围。</p>
 <p><img src="http://on9eybn3x.bkt.clouddn.com/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%BD%E9%AB%98.jpg" alt="盒子模型的宽高"></p>
-<p>5.盒子模型的填充：分为上、右、下、左(顺时针)，如 <code>div{padding:20px 10px 15px 30px;}</code>。<br>以上代码写的是四个属性值，若写的是三个属性值，则第一个值是上，第二个值是左右，第三个值是下；若写的是两个，则第一个值是上下，第二个值是左右；若写的是一个值，则四个方向是相同的。</p>
-<p>6.盒子模型的边界（外边距，margin）：元素与其它元素之间的距离，分为上、右、下、左。（同填充）<br>如 <code>div{margin:20px 10px 15px 30px;}</code>。<br><br><br><br>这一部分的css语法内容先到这里，基础部分的内容就差css的布局和样式设置啦~撒花~</p>
+<p>5.盒子模型的填充（内边距）：分为上、右、下、左(顺时针)，如 <code>div{padding:20px 10px 15px 30px;}</code>。<br>以上代码写的是四个属性值，若写的是三个属性值，则第一个值是上，第二个值是左右，第三个值是下；若写的是两个，则第一个值是上下，第二个值是左右；若写的是一个值，则四个方向是相同的。</p>
+<p>6.盒子模型的边界（外边距，margin）：元素与其它元素之间的距离，分为上、右、下、左。（同填充）<br>如 <code>div{margin:20px 10px 15px 30px;}</code>。</p>
+<p>附：<br><img src="http://on9eybn3x.bkt.clouddn.com/%E7%9B%92%E5%AD%903d%E6%A8%A1%E5%9E%8B.png" alt=""><br><br><br><br>这一部分的css语法内容先到这里，基础部分的内容就差css的布局和样式设置啦~撒花~</p>
 
       
     </div>
