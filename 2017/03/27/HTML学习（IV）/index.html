@@ -5,18 +5,18 @@
   
   <title>HTML学习(IV) - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。">
+  <meta name="description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。2017.3.27初稿  2017.3.31二改。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML学习(IV)">
 <meta property="og:url" content="http://yoursite.com/2017/03/27/HTML学习（IV）/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。">
+<meta property="og:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。2017.3.27初稿  2017.3.31二改。">
 <meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E5%B1%82%E6%A8%A1%E5%9E%8B-%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg">
 <meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E9%85%8D%E8%89%B2%E8%A1%A8.jpg">
-<meta property="og:updated_time" content="2017-03-27T14:47:30.861Z">
+<meta property="og:updated_time" content="2017-03-30T16:42:10.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML学习(IV)">
-<meta name="twitter:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。">
+<meta name="twitter:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。2017.3.27初稿  2017.3.31二改。">
 <meta name="twitter:image" content="http://on9eybn3x.bkt.clouddn.com/%E5%B1%82%E6%A8%A1%E5%9E%8B-%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg">
   
   
@@ -86,7 +86,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。</p>
+        <p>本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。<br>2017.3.27初稿  2017.3.31二改。</p>
 <a id="more"></a>
 <hr>
 <p><strong>css布局模型：</strong></p>
@@ -154,6 +154,15 @@
 <p>(3)百分比：如 <code>p{font-size:12px;line-height:130%}</code> 设置行高（行间距）为字体的130%（12 * 1.3 = 15.6px）。</p>
 <hr>
 <p><br><br>下篇会记到css样式设计的一些技巧。<br>这篇就到这啦~</p>
+<hr>
+<p>2017.3.31改</p>
+<p>在css样式设置中，最好先将样式初始化，通过  <code>*{margin:0;padding:0;}</code>。</p>
+<p>1.浮动布局</p>
+<p>可以实现块级元素横向排版；<br>通过设置float属性实现，有三个值：left，right，none；<br>当元素没有设置宽度值，而设置了浮动属性时，元素的宽度随内容的变化而变化；<br>当元素设置了浮动属性后，会对相邻的元素（紧邻后面的元素）有影响；</p>
+<p>2.清除浮动</p>
+<p>对受到浮动影响的元素设置清除浮动的属性；<br>方法一：设置clear属性， <code>clear:both</code> （或者 <code>clear:left</code> ，<code>clear:right</code>）;【对紧邻其后的元素清除浮动影响，而对父包含块产生的影响不起作用，即当父包含块缩成一条时】<br>方法二：设置 <code>width:100%</code> 和 <code>overflow:hidden</code> ；</p>
+<p>3.横向两列布局</p>
+<p>div块的高度一般不要设置；<br>设置两个块为 <code>float:left;</code> 和 <code>float:right;</code> 可以实现横向两列的布局。</p>
 
       
     </div>
