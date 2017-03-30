@@ -5,16 +5,16 @@
   
   <title>HTML学习(V) - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本篇是关于css样式的设计技巧。">
+  <meta name="description" content="本篇是关于css样式的设计技巧。2017.3.30改。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML学习(V)">
 <meta property="og:url" content="http://yoursite.com/2017/03/28/HTML学习（V）/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="本篇是关于css样式的设计技巧。">
-<meta property="og:updated_time" content="2017-03-28T10:48:19.443Z">
+<meta property="og:description" content="本篇是关于css样式的设计技巧。2017.3.30改。">
+<meta property="og:updated_time" content="2017-03-30T11:39:17.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML学习(V)">
-<meta name="twitter:description" content="本篇是关于css样式的设计技巧。">
+<meta name="twitter:description" content="本篇是关于css样式的设计技巧。2017.3.30改。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -83,7 +83,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本篇是关于css样式的设计技巧。</p>
+        <p>本篇是关于css样式的设计技巧。<br>2017.3.30改。</p>
 <a id="more"></a>
 <hr>
 <p><strong>css样式设计技巧：</strong></p>
@@ -113,6 +113,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.container&#123;</div><div class="line">    height:300px;</div><div class="line">    background:#ccc;</div><div class="line">    display:table-cell;/*兼容IE8以上及Chrome、Firefox*/</div><div class="line">    vertical-align:middle;/*兼容IE8以上及Chrome、Firefox*/</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <hr>
 <p><br> <br><br>这部分也结束了啊，最后这部分不是特别懂，也不怎么会用，多练练吧~加油呀</p>
+<hr>
+<p>2017.3.30笔记</p>
+<p>列布局-自动居中<br>1.标准文档流<br>2.块级元素<br>3.margin属性</p>
+<p>为父层设置宽度值，为子层宽度设置为100%；<br>外面的总的包裹层（如wrap），样式设置为 <code>#wrap{width:770px;margin:0 auto;}</code> ；<br>auto会根据浏览器的宽度自动的设置两边的外边距；<br>原理是：（浏览器的宽度-外包含层的宽度）/2=外边距；<br>但是不能为外包含层设置浮动（<code>float:left</code>）或者绝对定位属性（<code>position:absolute</code>），否则无法自动居中。</p>
+<hr>
 
       
     </div>
