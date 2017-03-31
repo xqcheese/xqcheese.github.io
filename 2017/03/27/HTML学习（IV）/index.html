@@ -5,18 +5,18 @@
   
   <title>HTML学习(IV) - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。2017.3.27初稿  2017.3.31二改。">
+  <meta name="description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。2017.3.27初稿  2017.3.31二改（两次）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML学习(IV)">
 <meta property="og:url" content="http://yoursite.com/2017/03/27/HTML学习（IV）/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。2017.3.27初稿  2017.3.31二改。">
+<meta property="og:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。2017.3.27初稿  2017.3.31二改（两次）。">
 <meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E5%B1%82%E6%A8%A1%E5%9E%8B-%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg">
 <meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E9%85%8D%E8%89%B2%E8%A1%A8.jpg">
-<meta property="og:updated_time" content="2017-03-30T16:42:10.375Z">
+<meta property="og:updated_time" content="2017-03-31T13:58:54.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML学习(IV)">
-<meta name="twitter:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。2017.3.27初稿  2017.3.31二改。">
+<meta name="twitter:description" content="本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。2017.3.27初稿  2017.3.31二改（两次）。">
 <meta name="twitter:image" content="http://on9eybn3x.bkt.clouddn.com/%E5%B1%82%E6%A8%A1%E5%9E%8B-%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg">
   
   
@@ -86,7 +86,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。<br>2017.3.27初稿  2017.3.31二改。</p>
+        <p>本篇的内容是关于css语法的布局模型、代码的缩写和两个值的说明。<br>2017.3.27初稿  2017.3.31二改（两次）。</p>
 <a id="more"></a>
 <hr>
 <p><strong>css布局模型：</strong></p>
@@ -163,6 +163,21 @@
 <p>对受到浮动影响的元素设置清除浮动的属性；<br>方法一：设置clear属性， <code>clear:both</code> （或者 <code>clear:left</code> ，<code>clear:right</code>）;【对紧邻其后的元素清除浮动影响，而对父包含块产生的影响不起作用，即当父包含块缩成一条时】<br>方法二：设置 <code>width:100%</code> 和 <code>overflow:hidden</code> ；</p>
 <p>3.横向两列布局</p>
 <p>div块的高度一般不要设置；<br>设置两个块为 <code>float:left;</code> 和 <code>float:right;</code> 可以实现横向两列的布局。</p>
+<hr>
+<p>2017.3.31二改</p>
+<p>绝对定位布局</p>
+<p>1.是通过设置position实现的布局；</p>
+<p>2.position属性拥有三种定位形式：静态定位，相对定位，绝对定位；<br>position可以设置四种属性值：static（静态定位），relative（相对定位），absolute（绝对定位），fixed（固定定位）；</p>
+<p>3.绝对定位和固定定位都属于绝对定位，静态定位是默认的（标准文档流）；</p>
+<p>4.相对定位的特点：是相对于自身原有的位置进行偏移；仍处于标准文档流中；随即拥有偏移属性和z-index属性（层堆叠，可能会覆盖其他层）；</p>
+<p>5.绝对定位的特点：建立了以包含块为基准的定位；完全脱离了标准文档流（对其兄弟元素不造成影响）；随即拥有偏移属性和z-index属性（层堆叠）；</p>
+<p>6.绝对定位的两种情况：未设置偏移量和设置了偏移量；</p>
+<p>(1)未设置偏移量：无论是否存在已定位祖先元素，都保持在元素初始位置；脱离了标准文档流（宽度随内容的变化而变化）；</p>
+<p>(2)设置了偏移量：若没有已定位的祖先元素，则以 <code>&lt;html&gt;</code> 为偏移参照基准；若有已定位的祖先元素，则以离他最近的已定位的祖先元素为偏移参照基准；</p>
+<p>7.使用绝对定位实现横向两列布局</p>
+<p>(1)使用absolute实现横向两列布局，常用于一列固定宽度，另一列宽度自适应的情况；</p>
+<p>(2)对于父元素使用相对定位relative，对于自适应宽度元素使用绝对定位absolute；</p>
+<p>(3)固定宽度列的高度&gt;自适应宽度的列（保证其不从父元素中溢出）。</p>
 
       
     </div>
