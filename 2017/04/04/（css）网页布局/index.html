@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>（css）网页布局 - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本篇主要记录的布局方式包括一列布局，两列布局，三列布局，以及混合布局。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="（css）网页布局">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/（css）网页布局/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="本篇主要记录的布局方式包括一列布局，两列布局，三列布局，以及混合布局。">
+<meta property="og:updated_time" content="2017-04-04T11:50:30.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="（css）网页布局">
+<meta name="twitter:description" content="本篇主要记录的布局方式包括一列布局，两列布局，三列布局，以及混合布局。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-（css）网页布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      （css）网页布局
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/04/04/（css）网页布局/" class="article-date">
+  <time datetime="2017-04-03T16:00:00.000Z" itemprop="datePublished">2017-04-04</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇主要记录的布局方式包括一列布局，两列布局，三列布局，以及混合布局。</p>
+<a id="more"></a>
+<hr>
+<p>1.一列布局<br>【水平居中】<br>为块状元素设置样式： <code>margin:0 auto;</code> 。<br>（若是为行内元素或其他设置水平居中，见<a href="https://xqcheese.github.io/2017/03/28/HTML%E5%AD%A6%E4%B9%A0%EF%BC%88V%EF%BC%89/" target="_blank" rel="external">HTML学习（V）</a>）</p>
+<p>2.两列布局<br>【左右】<br>通过为两块元素设置左右浮动</p>
+<p>(1)自适应宽度的两列布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*&#123;margin: 0; padding: 0; &#125;</div><div class="line">.left&#123;width: 20%; height: 500px; background: #fff; float: left; &#125;</div><div class="line">.right&#123;width: 80%; height: 500px; background: #ccc; float: right; &#125;</div></pre></td></tr></table></figure>
+<p>(2)固定宽度的两列布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;meta …… /&gt;</div><div class="line">&lt;title&gt;**&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">body&#123; margin:0; padding:0; font-size:30px; font-weight:bold&#125;</div><div class="line">div&#123; text-align:center; line-height:50px&#125;/*让子元素（文字）在父元素（div）中水平居中显示*/</div><div class="line">.main&#123; width:960px; height:600px; margin:0 auto&#125;</div><div class="line">.left&#123; width:300px; height:600px; background:#ccc; float:left;&#125;</div><div class="line">.right&#123; width:390px; height:600px; background:#FCC; float:right;&#125;/*left和right的宽度相加之和可以小于等于父元素的宽度*/</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;main&quot;&gt;</div><div class="line">    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>3.三列布局<br>【左中右】<br>（浮动模型见<a href="https://xqcheese.github.io/2017/03/27/HTML%E5%AD%A6%E4%B9%A0%EF%BC%88IV%EF%BC%89/" target="_blank" rel="external">HTML学习（IV）</a>）</p>
+<p>(1)自适应宽度的三列布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">*&#123;margin: 0; padding: 0;  &#125;</div><div class="line">.left&#123;width: 33.33%; height: 700px; background: #bbb; float: left; &#125;</div><div class="line">.middle&#123;width: 33.33%; height: 700px; background: #abc; float: left;&#125;</div><div class="line">.right&#123;width: 33.33%; height: 700px; background: #afe; float: right;&#125;</div></pre></td></tr></table></figure>
+<p>(2)固定宽度的三列布局<br>【使用绝对定位的方法，而不是浮动】<br>左右固定，中间的部分自适应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.left&#123; width:200px; height:600px; position:absolute; left:0; top:0; background:#CCC;&#125;</div><div class="line">.main&#123; height:600px; margin:0 310px 0 210px; background:#9CF;&#125;</div><div class="line">.right&#123; width:300px; height:600px; position:absolute; right:0; top:0; background:#FCC;&#125;</div></pre></td></tr></table></figure>
+<p>4.混合布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">body&#123; margin:0; padding:0; font-size:30px; font-weight:bold&#125;</div><div class="line">div&#123; text-align:center; line-height:50px&#125;</div><div class="line">.top&#123; height:100px;background:#9CF&#125;</div><div class="line">.head,.main&#123; width:960px; margin:0 auto;&#125;</div><div class="line">.head&#123; height:100px; background:#F90&#125;</div><div class="line">.left&#123; width:220px; height:600px; background:#ccc; float :left;&#125;</div><div class="line">.right&#123; width:720px; height:600px;background:#FCC; float:right;&#125;/*将主体main分为两列left和right*/</div><div class="line">.r_sub_left&#123; width:520px; height:600px; background:#9C3; float:left&#125;</div><div class="line">.r_sub_right&#123; width:180px; height:600px; background:#9FC; float:right;&#125;/*将right分为两列r_sub_left和r_sub_right*/</div><div class="line">.footer&#123; width:100%; height:50px; background:#9F9; overflow:hidden;&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p><br><br></p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/03/《春夏秋冬》/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《春夏秋冬》—— 张国荣&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>
