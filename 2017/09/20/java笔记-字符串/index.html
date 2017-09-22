@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/20/java笔记-字符串/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
-<meta property="og:updated_time" content="2017-09-20T03:00:27.896Z">
+<meta property="og:updated_time" content="2017-09-22T13:40:32.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习-字符串">
 <meta name="twitter:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
@@ -86,15 +86,17 @@
 <a id="more"></a>
 <hr>
 <p>1.返回该对象的字符串表示：toString方法</p>
-<p>说明：可以将StringBuffer类型转换为String类型；<br>      这个方法必须要一个已实例化的对象才能调用；</p>
+<p>说明：<br>可以将StringBuffer类型转换为String类型；<br>这个方法必须要一个已实例化的对象才能调用；</p>
 <p>2.equals和==的区别</p>
-<p>说明：== 比较的是指向对象的内存地址；<br>      equals() 通常情况下也会比较内存地址；<br>      一些类如String()改写了equals()方法，比较的是String对象的值，而不是内存地址；</p>
+<p>说明：<br>== 比较的是指向对象的内存地址；<br>equals() 通常情况下也会比较内存地址；<br>一些类如String()改写了equals()方法，比较的是String对象的值，而不是内存地址；</p>
 <p>3.append函数：想字符串后面追加字符或字符串</p>
-<p>说明：Stringbuffer有append()方法；<br>      Stringbuffer其实是动态字符串数组；<br>      append()是往动态字符串数组添加，跟“xxxx”+“yyyy”相比，相当那个‘+’号；<br>      String1+String2 和Stringbuffer1.append(“yyyy”) 虽然打印效果一样，但在内存中表示却不一样，String1+String2 存在于不同的两个地址内存，Stringbuffer1.append(Stringbuffer2)放在一起；</p>
+<p>说明：<br>Stringbuffer有append()方法；<br>Stringbuffer其实是动态字符串数组；<br>append()是往动态字符串数组添加，跟“xxxx”+“yyyy”相比，相当那个‘+’号；<br>String1+String2 和Stringbuffer1.append(“yyyy”) 虽然打印效果一样，但在内存中表示却不一样，String1+String2 存在于不同的两个地址内存，Stringbuffer1.append(Stringbuffer2)放在一起；</p>
 <p>4.对象调用toString方法报错：记得声明对象不要在for循环里声明啊……位置啊位置！</p>
-<p>5.charAt方法：用于返回指定索引处的字符，<br>说明：Java String类；<br>      语法charAt(int index)；<br>      返回指定索引处的字符；</p>
-<p>这次做的题：请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
-<p>解答：<br>public class Solution {<br>    public String replaceSpace(StringBuffer str) {<br>        if(str == null){<br>            return null;<br>        }<br>        StringBuffer nStr = new StringBuffer();<br>        for(int i = 0;i &lt; str.length();i++){<br>            if(str.charAt(i) == ‘ ‘){<br>                nStr.append(“%20”);<br>            }<br>            else{<br>                nStr.append(str.charAt(i));<br>            }<br>        }<br>        return nStr.toString();<br>    }<br>}</p>
+<p>5.charAt方法：用于返回指定索引处的字符，</p>
+<p>说明：<br>Java String类；<br>语法charAt(int index)；<br>返回指定索引处的字符；</p>
+<p><strong>这次做的题：</strong></p>
+<p>请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
+<p>解答：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public String replaceSpace(StringBuffer str) &#123;</div><div class="line">    	if(str == null)&#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        StringBuffer nStr = new StringBuffer();</div><div class="line">        for(int i = 0;i &lt; str.length();i++)&#123;</div><div class="line">            if(str.charAt(i) == &apos; &apos;)&#123;</div><div class="line">                nStr.append(&quot;%20&quot;);</div><div class="line">            &#125;</div><div class="line">            else&#123;</div><div class="line">                nStr.append(str.charAt(i));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return nStr.toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -110,6 +112,14 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/09/22/java笔记-正则表达式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          java学习-正则表达式
+        
+      </div>
+    </a>
   
   
     <a href="/2017/04/16/html+css任务笔记/" id="article-nav-older" class="article-nav-link-wrap">

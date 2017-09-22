@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java学习-正则表达式 - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习-正则表达式">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/java笔记-正则表达式/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+<meta property="og:updated_time" content="2017-09-22T13:44:49.446Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习-正则表达式">
+<meta name="twitter:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java笔记-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java学习-正则表达式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/09/22/java笔记-正则表达式/" class="article-date">
+  <time datetime="2017-09-21T16:00:00.000Z" itemprop="datePublished">2017-09-22</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>敲黑板！去练习！<br>要熟能生巧呀，不然一直看着代码也不会用呀</p>
+<a id="more"></a>
+<hr>
+<p>1.很困惑一点就是，在牛客网上做的编程题整个copy到自己的编译器时候，运行不出来，给的提示错误是“找不到主函数”，然后发现自己没写main方法……（牛客网上只写了类）</p>
+<p>注意【！！！】：<br>一定要有main方法才能执行该程序，规范的解释如下。<br>理论：java虚拟机通过main方法找到需要启动的运行程序，并且检查main函数所在类是否被java虚拟机装载。如果没有装载，那么就装载该类，并且装载所有相关的其他类。因此程序在运行的时候，第一个执行的方法就是main()方法。通常情况下，如果要运行一个类的方法，必须首先实例化出来这个类的一个对象，然后通过”对象名.方法名() “的方式来运行方法，但是因为main是程序的入口，这时候还没有实例化对象，因此将main方法声明为static的，这样这个方法就可以直接通过“类名.方法名() ”的方式来调用。</p>
+<p>一个java文件中只能有一个public修饰的类，每个类中只能有一个main方法，所以一个java文件中可以有多个main方法。</p>
+<p>也就是说，如果一个java文件有一个public修饰的类，那么java文件的名字，必须和这个public类的名字一样。</p>
+<p>2.正则表达式regex：符合一定规则的字符串，是一种文本模式。</p>
+<p>3.判断字符串不以0开头的语句：!str.startWith(“0”)</p>
+<p>4.遍历字符串：<br>（非正则表达式形式）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">char[] chs = str.toCharArray();</div><div class="line">for(int x = 0;x &lt; chs.length;x++)&#123;</div><div class="line">    char ch = chs[x];</div><div class="line">    if(!(ch&gt;=&apos;0&apos; &amp;&amp; ch&lt;=&apos;9&apos;))&#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5.一个栗子的正则表达式：<br>如qq号码，共6-12位，只能是数字，第一位不能是0。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">regex = &quot;[1-9][0-9]&#123;5,11&#125;&quot;;</div><div class="line">boolean flag = str.matches(regex);</div><div class="line">return flag;</div></pre></td></tr></table></figure></p>
+<p>也等价于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return str.matches(&quot;[1-9][0-9]&#123;5,11&#125;&quot;);</div></pre></td></tr></table></figure></p>
+<p>6.正则表达式的判断功能：用的就是上面的matches函数</p>
+<p><code>public boolean matches(String regex)</code></p>
+<p>7.正则表达式的分割功能：split函数，将串分割为几个数据</p>
+<p><code>public String[] split(String regex)</code></p>
+<p>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">String ages = &quot;20-28&quot;;</div><div class="line">String regex = &quot;-&quot;;</div><div class="line">String[] ageArray = ages.split(regex);</div><div class="line">for(int x = 0;x &lt; ageArray.length;x++)&#123;</div><div class="line">  System.out.println(ageArray[x]);</div><div class="line">&#125;</div><div class="line">int startAge = Integer.parseInt(ageArray[0]);</div><div class="line">int endAge = Integer.parseInt(ageArray[1]);</div></pre></td></tr></table></figure></p>
+<p>若要切割一个路径，如<code>E:\myblog\source\_posts</code>，则<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String str = &quot;E:\\myblog\\source\\_posts&quot;;</div><div class="line">String regex = &quot;\\\\&quot;;</div><div class="line">……</div></pre></td></tr></table></figure></p>
+<p>另一个栗子：<br>给一个数字的字符串排序，45 98 27 36 10<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class RegexSort&#123;</div><div class="line">  public static void main(String[] args)&#123;</div><div class="line"></div><div class="line">    String s = &quot;45 98 27 36 10&quot;;</div><div class="line">    String[] strArray = s.split(&quot; &quot;);</div><div class="line"></div><div class="line">    int[] arr = new int[strArray.length];//定义int数组</div><div class="line"></div><div class="line">    //把字符串数组转化为int数组</div><div class="line">    for(int x = 0;x &lt; arr.length;x++)&#123;</div><div class="line">      arr[x] = Integer.parseInt(strArray[x]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    Arrays.sort(arr);//对int数组进行排序</div><div class="line"></div><div class="line">    //把排序后的数组元素拼接得到一个字符串</div><div class="line">    StringBuilder sb = new StringBuilder();</div><div class="line">    for(int x = 0;x &lt; arr.length;x++)&#123;</div><div class="line">      if(x == arr.length - 1)&#123;</div><div class="line">        sb.append(arr[x]);</div><div class="line">      &#125;else&#123;</div><div class="line">        sb.append(arr[x]).append(&quot; &quot;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    String result = sb.toString();</div><div class="line">    System.out.println(result);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>8.正则表达式的替换功能：replaceAll函数</p>
+<p><code>public String replaceAll(String regex,String replacement)</code></p>
+<p>栗子：把数字替换成*号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//几个数字替换成一个*</div><div class="line">String str = &quot;hejiji2773hfjdhf7338kdj&quot;;</div><div class="line">String regex = &quot;\\d+&quot;;//一个或多个数字</div><div class="line">String result = str.replaceAll(regex,&quot;*&quot;);</div><div class="line">System.out.println(result);</div><div class="line"></div><div class="line">//一个数字替换成一个*</div><div class="line">String str = &quot;hejiji2773hfjdhf7338kdj&quot;;</div><div class="line">String regex = &quot;\\d&quot;;//一个数字</div><div class="line">String result = str.replaceAll(regex,&quot;*&quot;);</div><div class="line">System.out.println(result);</div></pre></td></tr></table></figure>
+<p>9.字符：<br>x  表示字符x<br><code>\\</code> 反斜线字符<br><code>\r</code> 回车<br><code>\n</code> 换行</p>
+<p>字符类：<br>[abc] a、b或c（简单类）<br>[^abc] 任何字符，除了a、b或c（否定）<br>[a-zA-Z] a-z或A-Z（范围）<br>[0-9] 0到9的数字字符</p>
+<p>预定义字符类：<br>. 任何字符（与行结束符可能匹配也可能不匹配）<br>\d 数字：[0-9]<br>\w 单词字符：[a-zA-Z_0-9]（在正则表达式中可以组词单词的字符）</p>
+<p>边界匹配器：<br>^ 行的开头<br>$ 行的结尾（^helloworld$）<br>\b 单词边界（非单词字符）</p>
+<p>数量词：<br>x? ：x，一次或一次也没有（1或0）<br>x* ：x，零次或多次（大于等于0）<br>x+ ：x，一次或多次（大于等于1）<br>x{n} ：x，恰好n次<br>x{n,m} ：x，至少n次，但是不超过m次</p>
+<p>【emmmmm……虽然和下面的题不是很匹配，不过就是这个知识点嘛】</p>
+<p>10.年-月-日：^(d{2}|d{4})-((0([1-9]{1}))|(1[1|2]))-((<a href="[1-9]{1}">0-2</a>)|(3[0|1]))$<br>（有些不规范）</p>
+<p><strong>这次做的题：</strong></p>
+<p>请实现一个函数用来匹配包括’.’和’<em>‘的正则表达式。模式中的字符’.’表示任意一个字符，而’</em>‘表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串”aaa”与模式”a.a”和”ab<em>ac</em>a”匹配，但是与”aa.a”和”ab*a”均不匹配。</p>
+<p>解答（参照大佬的答案）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public boolean match(char[] str, char[] pattern)&#123;</div><div class="line">        if(str == null || pattern == null)&#123;</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">        int strIndex = 0;</div><div class="line">        int patternIndex = 0;</div><div class="line">        return getMatch(str,strIndex,pattern,patternIndex);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public boolean getMatch(char[] str,int strIndex,char[] pattern,int patternIndex)&#123;</div><div class="line">        //有效性检验</div><div class="line">        if(strIndex == str.length &amp;&amp; patternIndex == pattern.length)&#123;</div><div class="line">            return true;</div><div class="line">        &#125;</div><div class="line">        if(strIndex != str.length &amp;&amp; patternIndex == pattern.length)&#123;</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">        if(patternIndex + 1 &lt; pattern.length &amp;&amp; pattern[patternIndex + 1] == &apos;*&apos;)&#123;</div><div class="line">            if((strIndex != str.length &amp;&amp; pattern[patternIndex] == str[strIndex]) || (pattern[patternIndex] == &apos;.&apos; &amp;&amp; strIndex != str.length))&#123;</div><div class="line">                return getMatch(str,strIndex,pattern,patternIndex + 2)</div><div class="line">                        ||getMatch(str,strIndex + 1,pattern,patternIndex)</div><div class="line">                        ||getMatch(str,strIndex + 1,pattern,patternIndex + 2);</div><div class="line">            &#125;</div><div class="line">            return getMatch(str,strIndex,pattern,patternIndex + 2);</div><div class="line">        &#125;</div><div class="line">        if((strIndex != str.length &amp;&amp; pattern[patternIndex] == str[strIndex]) || (pattern[patternIndex] == &apos;.&apos; &amp;&amp; strIndex != str.length))&#123;</div><div class="line">            return getMatch(str,strIndex + 1,pattern,patternIndex + 1);</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/20/java笔记-字符串/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java学习-字符串&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>
