@@ -5,16 +5,16 @@
   
   <title>java学习-正则表达式 - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+  <meta name="description" content="敲黑板！去练习！熟能生巧熟能生巧熟能生巧……">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java学习-正则表达式">
 <meta property="og:url" content="http://yoursite.com/2017/09/22/java笔记-正则表达式/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
-<meta property="og:updated_time" content="2017-09-22T13:44:49.446Z">
+<meta property="og:description" content="敲黑板！去练习！熟能生巧熟能生巧熟能生巧……">
+<meta property="og:updated_time" content="2017-09-24T12:32:00.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习-正则表达式">
-<meta name="twitter:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+<meta name="twitter:description" content="敲黑板！去练习！熟能生巧熟能生巧熟能生巧……">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,7 +82,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>敲黑板！去练习！<br>要熟能生巧呀，不然一直看着代码也不会用呀</p>
+        <p>敲黑板！去练习！<br>熟能生巧熟能生巧熟能生巧……</p>
 <a id="more"></a>
 <hr>
 <p>1.很困惑一点就是，在牛客网上做的编程题整个copy到自己的编译器时候，运行不出来，给的提示错误是“找不到主函数”，然后发现自己没写main方法……（牛客网上只写了类）</p>
@@ -105,7 +105,11 @@
 <p><code>public String replaceAll(String regex,String replacement)</code></p>
 <p>栗子：把数字替换成*号</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//几个数字替换成一个*</div><div class="line">String str = &quot;hejiji2773hfjdhf7338kdj&quot;;</div><div class="line">String regex = &quot;\\d+&quot;;//一个或多个数字</div><div class="line">String result = str.replaceAll(regex,&quot;*&quot;);</div><div class="line">System.out.println(result);</div><div class="line"></div><div class="line">//一个数字替换成一个*</div><div class="line">String str = &quot;hejiji2773hfjdhf7338kdj&quot;;</div><div class="line">String regex = &quot;\\d&quot;;//一个数字</div><div class="line">String result = str.replaceAll(regex,&quot;*&quot;);</div><div class="line">System.out.println(result);</div></pre></td></tr></table></figure>
-<p>9.字符：<br>x  表示字符x<br><code>\\</code> 反斜线字符<br><code>\r</code> 回车<br><code>\n</code> 换行</p>
+<p>9.正则表达式的获取功能：Pattern类和Matcher类</p>
+<p>需要导入包：<code>java.util.regex.Pattern;</code><br>            <code>java.util.regex.Matcher;</code><br>典型的调用顺序是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//把正则表达式字符串通过compile方法编译生成模式对象</div><div class="line">Pattern p = Pattern.compile(&quot;a*b&quot;);</div><div class="line">//通过模式对象调用matcher方法，参数是被操作的字符串，返回一个匹配器对象</div><div class="line">Matcher m = p.matcher(&quot;aaaab&quot;);</div><div class="line">//用匹配器进行匹配</div><div class="line">boolean b = m.matches();</div><div class="line">System.out.println(b);</div></pre></td></tr></table></figure></p>
+<p>栗子：<br>把这个字符串中的三个字符组成的单词找出来：zhu yi la，ming tian fang jia</p>
+<p>步骤是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">String str = &quot;zhu yi la，ming tian fang jia&quot;;</div><div class="line">String regex = &quot;\\b[a-z]&#123;3&#125;\\b&quot;;//前后都必须是单词边界</div><div class="line"></div><div class="line">Pattern p = Pattern.compile(regex);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line"></div><div class="line">//注意：获取之前，一定要先判断是否存在满足条件的数据</div><div class="line">//public boolean find()</div><div class="line">//boolean flag = m.find();</div><div class="line">//System.out.println(flag);</div><div class="line">//输出true or false</div><div class="line"></div><div class="line">//public String group()</div><div class="line">//String s = m.group();</div><div class="line">//System.out.println(s);</div><div class="line">//输出单词</div><div class="line"></div><div class="line">//上两段归结为下面的两行：</div><div class="line">while(m.find())&#123;</div><div class="line">    System.out.println(m.group());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>10.字符：<br>x  表示字符x<br><code>\\</code> 反斜线字符<br><code>\r</code> 回车<br><code>\n</code> 换行</p>
 <p>字符类：<br>[abc] a、b或c（简单类）<br>[^abc] 任何字符，除了a、b或c（否定）<br>[a-zA-Z] a-z或A-Z（范围）<br>[0-9] 0到9的数字字符</p>
 <p>预定义字符类：<br>. 任何字符（与行结束符可能匹配也可能不匹配）<br>\d 数字：[0-9]<br>\w 单词字符：[a-zA-Z_0-9]（在正则表达式中可以组词单词的字符）</p>
 <p>边界匹配器：<br>^ 行的开头<br>$ 行的结尾（^helloworld$）<br>\b 单词边界（非单词字符）</p>
@@ -130,6 +134,14 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/09/24/java笔记-基础点I/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          java笔记-基础点I
+        
+      </div>
+    </a>
   
   
     <a href="/2017/09/20/java笔记-字符串/" id="article-nav-older" class="article-nav-link-wrap">

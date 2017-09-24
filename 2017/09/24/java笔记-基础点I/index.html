@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java笔记-基础点I - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基础要理解好啊打地基打地基打地基……这里有java的基本数据类型，int和Integer、&amp;amp;和&amp;amp;&amp;amp;、String和StringBuilder和StringBuffer、重载（Overload）和重写（Override）、抽象类（abstract class）和接口（interface）的辨析。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java笔记-基础点I">
+<meta property="og:url" content="http://yoursite.com/2017/09/24/java笔记-基础点I/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="基础要理解好啊打地基打地基打地基……这里有java的基本数据类型，int和Integer、&amp;amp;和&amp;amp;&amp;amp;、String和StringBuilder和StringBuffer、重载（Overload）和重写（Override）、抽象类（abstract class）和接口（interface）的辨析。">
+<meta property="og:updated_time" content="2017-09-24T12:36:45.662Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java笔记-基础点I">
+<meta name="twitter:description" content="基础要理解好啊打地基打地基打地基……这里有java的基本数据类型，int和Integer、&amp;amp;和&amp;amp;&amp;amp;、String和StringBuilder和StringBuffer、重载（Overload）和重写（Override）、抽象类（abstract class）和接口（interface）的辨析。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java笔记-基础点I" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java笔记-基础点I
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/09/24/java笔记-基础点I/" class="article-date">
+  <time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished">2017-09-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>基础要理解好啊<br>打地基打地基打地基……<br>这里有java的基本数据类型，int和Integer、&amp;和&amp;&amp;、String和StringBuilder和StringBuffer、重载（Overload）和重写（Override）、抽象类（abstract class）和接口（interface）的辨析。</p>
+<a id="more"></a>
+<hr>
+<p>1.java的8个基本数据类型：byte,short,int,long,float,double,char,boolean.</p>
+<p>2.int和Integer：</p>
+<p>Java是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java为每一个基本数据类型都引入了对应的包装类型（wrapper class），int的包装类就是Integer，从Java 5开始引入了自动装箱/拆箱机制，使得二者可以相互转换。<br>Java 为每个原始类型提供了包装类型：</p>
+<ul>
+<li>原始类型: boolean，char，byte，short，int，long，float，double</li>
+<li>包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double</li>
+</ul>
+<p>有点难的题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class Test03 &#123;</div><div class="line"> </div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        Integer f1 = 100, f2 = 100, f3 = 150, f4 = 150;</div><div class="line"> </div><div class="line">        System.out.println(f1 == f2);</div><div class="line">        System.out.println(f3 == f4);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>解释：简单的说，如果整型字面量的值在-128到127之间，那么不会new新的Integer对象，而是直接引用常量池中的Integer对象，所以上面的面试题中f1==f2的结果是true，而f3==f4的结果是false。</p>
+<p>3.&amp;和&amp;&amp;：</p>
+<p>&amp;运算符有两种用法：(1)按位与；(2)逻辑与。&amp;&amp;运算符是短路与运算。逻辑与跟短路与的差别是非常巨大的，虽然二者都要求运算符左右两端的布尔值都是true整个表达式的值才是true。&amp;&amp;之所以称为短路运算是因为，如果&amp;&amp;左边的表达式的值是false，右边的表达式会被直接短路掉，不会进行运算。</p>
+<p>4.String和StringBuilder和StringBuffer：</p>
+<p>Java平台提供了两种类型的字符串：String和StringBuffer/StringBuilder，它们可以储存和操作字符串。其中String是只读字符串，也就意味着String引用的字符串内容是不能被改变的。而StringBuffer/StringBuilder类表示的字符串对象可以直接进行修改。StringBuilder是Java 5中引入的，它和StringBuffer的方法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方面都没有被synchronized修饰，因此它的效率也比StringBuffer要高。</p>
+<p>5.重载（Overload）和重写（Override）：</p>
+<p>重载发生在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的返回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常（里氏代换原则）。重载对返回类型没有特殊的要求。</p>
+<p>6.抽象类（abstract class）和接口（interface）：</p>
+<p>一个类如果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部进行实现，否则该类仍然需要被声明为抽象类。<br>接口比抽象类更加抽象，因为抽象类中可以有抽象方法和具体方法，而接口中的方法全部都是抽象方法。<br>抽象类中的成员可以是private、默认、protected、public的，而接口中的成员全都是public的。<br>抽象类中可以定义成员变量，而接口中定义的成员变量实际上都是常量。<br>有抽象方法的类必须被声明为抽象类，而抽象类未必要有抽象方法。</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/22/java笔记-正则表达式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java学习-正则表达式&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>
