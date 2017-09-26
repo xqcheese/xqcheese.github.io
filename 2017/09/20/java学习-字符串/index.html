@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java学习-字符串 - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习-字符串">
+<meta property="og:url" content="http://yoursite.com/2017/09/20/java学习-字符串/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+<meta property="og:updated_time" content="2017-09-22T13:40:32.567Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习-字符串">
+<meta name="twitter:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java学习-字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java学习-字符串
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/09/20/java学习-字符串/" class="article-date">
+  <time datetime="2017-09-19T16:00:00.000Z" itemprop="datePublished">2017-09-20</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>敲黑板！去练习！<br>要熟能生巧呀，不然一直看着代码也不会用呀</p>
+<a id="more"></a>
+<hr>
+<p>1.返回该对象的字符串表示：toString方法</p>
+<p>说明：<br>可以将StringBuffer类型转换为String类型；<br>这个方法必须要一个已实例化的对象才能调用；</p>
+<p>2.equals和==的区别</p>
+<p>说明：<br>== 比较的是指向对象的内存地址；<br>equals() 通常情况下也会比较内存地址；<br>一些类如String()改写了equals()方法，比较的是String对象的值，而不是内存地址；</p>
+<p>3.append函数：想字符串后面追加字符或字符串</p>
+<p>说明：<br>Stringbuffer有append()方法；<br>Stringbuffer其实是动态字符串数组；<br>append()是往动态字符串数组添加，跟“xxxx”+“yyyy”相比，相当那个‘+’号；<br>String1+String2 和Stringbuffer1.append(“yyyy”) 虽然打印效果一样，但在内存中表示却不一样，String1+String2 存在于不同的两个地址内存，Stringbuffer1.append(Stringbuffer2)放在一起；</p>
+<p>4.对象调用toString方法报错：记得声明对象不要在for循环里声明啊……位置啊位置！</p>
+<p>5.charAt方法：用于返回指定索引处的字符，</p>
+<p>说明：<br>Java String类；<br>语法charAt(int index)；<br>返回指定索引处的字符；</p>
+<p><strong>这次做的题：</strong></p>
+<p>请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
+<p>解答：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public String replaceSpace(StringBuffer str) &#123;</div><div class="line">    	if(str == null)&#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        StringBuffer nStr = new StringBuffer();</div><div class="line">        for(int i = 0;i &lt; str.length();i++)&#123;</div><div class="line">            if(str.charAt(i) == &apos; &apos;)&#123;</div><div class="line">                nStr.append(&quot;%20&quot;);</div><div class="line">            &#125;</div><div class="line">            else&#123;</div><div class="line">                nStr.append(str.charAt(i));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return nStr.toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串/">字符串</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/22/java学习-正则表达式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          java学习-正则表达式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/16/html+css任务笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">html+css任务笔记&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>
