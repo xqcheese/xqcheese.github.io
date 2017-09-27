@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/26/java笔记-错题点II/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="java专项练习模糊点第二弹。">
-<meta property="og:updated_time" content="2017-09-26T14:55:15.885Z">
+<meta property="og:updated_time" content="2017-09-27T03:37:47.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点II">
 <meta name="twitter:description" content="java专项练习模糊点第二弹。">
@@ -101,6 +101,11 @@
 <p>7.关于java异常处理：</p>
 <p>throws用于在方法上声明该方法不需要处理的异常类型,用在方法上后面跟异常类名 可以是多个异常类；<br>throw用于抛出具体异常类的对象,用在方法内，后面跟异常对象只能是一个异常类型实体。<br>try块必须和catch块或和finally同在,不能单独存在,二者必须出现一个。<br>finally块总会执行,不论是否有错误出现。但是若try语句块或会执行的catch语句块使用了JVM系统退出语句,finally块就不会被执行了。一般我们把关闭资源的代码放在finally里面，保证资源总是能关闭。</p>
 <hr>
+<p>2017.9.27错题点：<br><br><br><br><br>1.java的跨平台特性是指，编译后的文件跨平台，而不是源程序跨平台。</p>
+<p>2.servlet和CGI：</p>
+<p>servlet处于服务器进程中，它通过多线程方式运行其service方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于servlet。</p>
+<p>传统的CGI程序，不具备平台无关性特征，系统环境发生变化，CGI程序就要瘫痪，而Servlet具备Java的平台无关性，在系统开发过程中保持了系统的可扩展性、高效性。</p>
+<p>3.switch语句后的控制表达式只能是short、char、int、long整数类型和枚举类型，不能是float，double和boolean类型。String类型是java7开始支持。 </p>
 
       
     </div>
