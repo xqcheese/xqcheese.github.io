@@ -5,16 +5,16 @@
   
   <title>java笔记-错题点II - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java专项练习模糊点第二弹。">
+  <meta name="description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java笔记-错题点II">
 <meta property="og:url" content="http://yoursite.com/2017/09/26/java笔记-错题点II/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="java专项练习模糊点第二弹。">
-<meta property="og:updated_time" content="2017-09-27T03:37:47.515Z">
+<meta property="og:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
+<meta property="og:updated_time" content="2017-09-28T13:27:51.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点II">
-<meta name="twitter:description" content="java专项练习模糊点第二弹。">
+<meta name="twitter:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,11 +82,11 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>java专项练习模糊点第二弹。</p>
+        <p>java专项练习模糊点第二弹。<br>包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。</p>
 <a id="more"></a>
 <hr>
 <p>1.关于异常的编程：</p>
-<p>异常分为运行时异常，非运行时异常和error。其中error是系统异常，只能重启系统解决；非运行时异常需要我们自己补获；而运行异常是程序运行时由虚拟机帮助我们补获，运行时异常包括数组的溢出，内存的溢出空指针，分母为0等；<br>输入输出流编程中，读和写时都要抛出IOException；<br>int a[]=null; a[0]=1; 将产生NullPointerException。</p>
+<p>异常分为运行时异常，非运行时异常和error。其中error是系统异常，只能重启系统解决；非运行时异常需要我们自己补获；而运行异常是程序运行时由虚拟机帮助我们补获，运行时异常包括数组的溢出，内存的溢出空指针，分母为0等；<br>输入输出流编程中，读和写时都要抛出IOException；<br><code>int a[]=null; a[0]=1;</code> 将产生NullPointerException；<br>在某些接口实现中我们通常需要捕获编译运行期所有的异常，用catch下Exception的实例进行捕获，因为catch下的error是系统出错，catch是无法处理的，难以修复的，RuntimeException不需要程序员进行捕获处理，error和exception都是throwable的子类。</p>
 <p>2.非静态变量不能够被静态方法引用。</p>
 <p>3.Hashtable和HashMap：</p>
 <p>（1）继承不同，但是都实现了Map接口。<br><code>public class Hashtable extends Dictionary implements Map</code><br><code>public class HashMap extends AbstractMap implements Map</code><br>（2）Hashtable 中的方法是同步的，而HashMap中的方法在缺省情况下是非同步的。在多线程并发的环境下，可以直接使用Hashtable，但是要使用HashMap的话就要自己增加同步处理了。<br>（3）Hashtable中，key和value都不允许出现null值；<br>在HashMap中，null可以作为键，这样的键只有一个；可以有一个或多个键所对应的值为null。当get()方法返回null值时，即可以表示 HashMap中没有该键，也可以表示该键所对应的值为null。因此，在HashMap中不能由get()方法来判断HashMap中是否存在某个键， 而应该用containsKey()方法来判断。<br>（4）两个遍历方式的内部实现上不同。<br>Hashtable、HashMap都使用了 Iterator。而由于历史原因，Hashtable还使用了Enumeration的方式 。<br>（5）哈希值的使用不同，HashTable直接使用对象的hashCode。而HashMap重新计算hash值。<br>（6）Hashtable和HashMap它们两个内部实现方式的数组的初始大小和扩容的方式。<br>HashTable中hash数组默认大小是11，增加的方式是 old*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。</p>
@@ -101,11 +101,6 @@
 <p>7.关于java异常处理：</p>
 <p>throws用于在方法上声明该方法不需要处理的异常类型,用在方法上后面跟异常类名 可以是多个异常类；<br>throw用于抛出具体异常类的对象,用在方法内，后面跟异常对象只能是一个异常类型实体。<br>try块必须和catch块或和finally同在,不能单独存在,二者必须出现一个。<br>finally块总会执行,不论是否有错误出现。但是若try语句块或会执行的catch语句块使用了JVM系统退出语句,finally块就不会被执行了。一般我们把关闭资源的代码放在finally里面，保证资源总是能关闭。</p>
 <hr>
-<p>2017.9.27错题点：<br><br><br><br><br>1.java的跨平台特性是指，编译后的文件跨平台，而不是源程序跨平台。</p>
-<p>2.servlet和CGI：</p>
-<p>servlet处于服务器进程中，它通过多线程方式运行其service方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于servlet。</p>
-<p>传统的CGI程序，不具备平台无关性特征，系统环境发生变化，CGI程序就要瘫痪，而Servlet具备Java的平台无关性，在系统开发过程中保持了系统的可扩展性、高效性。</p>
-<p>3.switch语句后的控制表达式只能是short、char、int、long整数类型和枚举类型，不能是float，double和boolean类型。String类型是java7开始支持。 </p>
 
       
     </div>
@@ -121,6 +116,14 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/09/27/java笔记-错题点III/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          java笔记-错题点III
+        
+      </div>
+    </a>
   
   
     <a href="/2017/09/25/java笔记-错题点I/" id="article-nav-older" class="article-nav-link-wrap">
