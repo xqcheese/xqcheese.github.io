@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/25/java笔记-错题点I/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性等。">
-<meta property="og:updated_time" content="2017-09-28T13:21:29.406Z">
+<meta property="og:updated_time" content="2017-09-29T03:15:25.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点I">
 <meta name="twitter:description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性等。">
@@ -89,7 +89,7 @@
 <p>2.关于System.out.println()：</p>
 <p>System是java.lang包下的一个类，out为System的final静态成员（PrintStream类型），println()是PrintStream类的实例方法。</p>
 <p>3.关于访问权限：</p>
-<p>public：可以被所有其他类所访问；<br>protected：自身、子类及同一个包中类可以访问；<br>default：同一包中的类可以访问；<br>private：只能被自己访问和修改；<br>public&gt;protcted&gt;default&gt;priavte。</p>
+<p>public：可以被所有其他类所访问（同类、同包、子类、通用性）；<br>protected：自身、子类及同一个包中类可以访问（同类、同包、子类）；<br>default：同一包中的类可以访问（同类、同包）；<br>private：只能被自己访问和修改（同类）；<br>public&gt;protcted&gt;default&gt;priavte。</p>
 <p>对于外部类来说，只有两种修饰，public和默认（default），因为外部类放在包中，只有两种可能，包可见和包不可见。<br>对于内部类来说，可以有所有的修饰，因为内部类放在外部类中，与成员变量的地位一致，所以有四种可能。</p>
 <p>4.关于this和super关键字：</p>
 <p>this和super只能放在第一行；<br>this()和super()不可以同时出现在一个构造函数中；<br>this和super都无法出现在static 修饰的方法中;<br>super从子类中调用父类的构造方法，this()在同一类内调用其它方法。</p>
