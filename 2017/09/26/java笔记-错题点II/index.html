@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/26/java笔记-错题点II/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
-<meta property="og:updated_time" content="2017-09-28T13:27:51.411Z">
+<meta property="og:updated_time" content="2017-09-30T02:29:07.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点II">
 <meta name="twitter:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
@@ -100,6 +100,7 @@
 <p>【解释也没看懂……之后自己再回来看这个吧】</p>
 <p>7.关于java异常处理：</p>
 <p>throws用于在方法上声明该方法不需要处理的异常类型,用在方法上后面跟异常类名 可以是多个异常类；<br>throw用于抛出具体异常类的对象,用在方法内，后面跟异常对象只能是一个异常类型实体。<br>try块必须和catch块或和finally同在,不能单独存在,二者必须出现一个。<br>finally块总会执行,不论是否有错误出现。但是若try语句块或会执行的catch语句块使用了JVM系统退出语句,finally块就不会被执行了。一般我们把关闭资源的代码放在finally里面，保证资源总是能关闭。</p>
+<p>try没执行，所以没有异常抛出，程序继续，finally必须执行，try外部代码执行；<br>try执行，抛出异常，程序中断，执行catch，最后执行finally，程序结束。</p>
 <hr>
 
       
