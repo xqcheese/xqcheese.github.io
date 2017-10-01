@@ -5,16 +5,16 @@
   
   <title>java笔记-错题点IV - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java专项练习模糊点第四弹。包括变量、常量的定义、json格式等小点。">
+  <meta name="description" content="java专项练习模糊点第四弹。包括变量、常量的定义、json格式、jdbc statement、多线程的实现方式等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java笔记-错题点IV">
 <meta property="og:url" content="http://yoursite.com/2017/09/29/java笔记-错题点IV/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="java专项练习模糊点第四弹。包括变量、常量的定义、json格式等小点。">
-<meta property="og:updated_time" content="2017-09-30T03:26:31.738Z">
+<meta property="og:description" content="java专项练习模糊点第四弹。包括变量、常量的定义、json格式、jdbc statement、多线程的实现方式等。">
+<meta property="og:updated_time" content="2017-10-01T12:12:03.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点IV">
-<meta name="twitter:description" content="java专项练习模糊点第四弹。包括变量、常量的定义、json格式等小点。">
+<meta name="twitter:description" content="java专项练习模糊点第四弹。包括变量、常量的定义、json格式、jdbc statement、多线程的实现方式等。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,7 +82,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>java专项练习模糊点第四弹。<br>包括变量、常量的定义、json格式等小点。</p>
+        <p>java专项练习模糊点第四弹。<br>包括变量、常量的定义、json格式、jdbc statement、多线程的实现方式等。</p>
 <a id="more"></a>
 <hr>
 <p>1.while语句的时间复杂度是log2n。</p>
@@ -93,6 +93,18 @@
 <p>2017-09-30</p>
 <p>1.json格式：</p>
 <p>JSON语法可以表示以下三种类型的值:<br>1.简单值：使用与JavaScript 相同的语法，可以在JSON中表示字符串，数值，布尔值和null。<br>2.对象：对象作为一种复杂数据类型，表示的是一组有序的键值对。而每组键值对中的值可以是简单值，也可以是复杂数据类型的值。<br>3.数组：数组也是一种复杂数据类型，表示一组有序的值的列表，可以通过数值索引来访问其中的值。数组的值也可以是任意类型–简单值，对象或数组。<br>（后续扩充说明。现在还不懂json是什么……）</p>
+<hr>
+<p>2017-10-01</p>
+<p>1.在一个基于分布式的游戏服务器系统中，不同的服务器之间，可行的通信方式有：消息队列、高速缓存数据库、套接字；不可用管道，管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。</p>
+<p>2.关于jdbc statement：</p>
+<p>（1）Statement、PreparedStatement和CallableStatement都是接口(interface)。<br>（2）Statement继承自Wrapper、PreparedStatement继承自Statement、CallableStatement继承自PreparedStatement。<br>（3）Statement接口提供了执行语句和获取结果的基本方法；<br>PreparedStatement接口添加了处理 IN 参数的方法；<br>CallableStatement接口添加了处理 OUT 参数的方法。<br>（4）<br>a.Statement：<br>普通的不带参的查询SQL；支持批量更新,批量删除;<br>b.PreparedStatement：<br>可变参数的SQL,编译一次,执行多次,效率高；<br>安全性好，有效防止Sql注入等问题；<br>支持批量更新,批量删除；<br>c.CallableStatement：<br>继承自PreparedStatement,支持带参数的SQL操作；<br>支持调用存储过程,提供了对输出和输入/输出参数(INOUT)的支持；</p>
+<p>Statement每次执行sql语句，数据库都要执行sql语句的编译，最好用于仅执行一次查询并返回结果的情形，效率高于PreparedStatement。  </p>
+<p>PreparedStatement是预编译的，使用PreparedStatement有几个好处：<br>（1）在执行可变参数的一条SQL时，PreparedStatement比Statement的效率高，因为DBMS预编译一条SQL当然会比多次编译一条SQL的效率要高；<br>（2）安全性好，有效防止Sql注入等问题；<br>（3）对于多次重复执行的语句，使用PreparedStament效率会更高一点，并且在这种情况下也比较适合使用batch；<br>（4）代码的可读性和可维护性。</p>
+<p>3.一个小题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int i = 5;</div><div class="line">int j = 10;</div><div class="line">System.out.println(i + ~j);</div></pre></td></tr></table></figure></p>
+<p>结果是：-6</p>
+<p>因为！<br>有个公式，-n=~n+1，可推出~n=-n-1，所以~10=-11再加5结果为-6……</p>
+<p>4.多线程一共有三种实现方式：</p>
+<p>继承Thread类，并重写run()方法；<br>实现Runnable接口，实现run()方法；<br>实现Callable接口，线程结束后可以有返回值，但是该方式是依赖于线程池的。</p>
 <hr>
 
       

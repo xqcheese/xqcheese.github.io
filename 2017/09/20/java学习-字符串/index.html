@@ -5,16 +5,16 @@
   
   <title>java学习-字符串 - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+  <meta name="description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀内容包括toString方法、equals和==的区别、append函数、charAt方法等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java学习-字符串">
 <meta property="og:url" content="http://yoursite.com/2017/09/20/java学习-字符串/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
-<meta property="og:updated_time" content="2017-09-22T13:40:32.567Z">
+<meta property="og:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀内容包括toString方法、equals和==的区别、append函数、charAt方法等。">
+<meta property="og:updated_time" content="2017-10-01T12:13:26.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习-字符串">
-<meta name="twitter:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀">
+<meta name="twitter:description" content="敲黑板！去练习！要熟能生巧呀，不然一直看着代码也不会用呀内容包括toString方法、equals和==的区别、append函数、charAt方法等。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,17 +82,17 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>敲黑板！去练习！<br>要熟能生巧呀，不然一直看着代码也不会用呀</p>
+        <p>敲黑板！去练习！<br>要熟能生巧呀，不然一直看着代码也不会用呀<br>内容包括toString方法、equals和==的区别、append函数、charAt方法等。</p>
 <a id="more"></a>
 <hr>
 <p>1.返回该对象的字符串表示：toString方法</p>
 <p>说明：<br>可以将StringBuffer类型转换为String类型；<br>这个方法必须要一个已实例化的对象才能调用；</p>
 <p>2.equals和==的区别</p>
-<p>说明：<br>== 比较的是指向对象的内存地址；<br>equals() 通常情况下也会比较内存地址；<br>一些类如String()改写了equals()方法，比较的是String对象的值，而不是内存地址；</p>
-<p>3.append函数：想字符串后面追加字符或字符串</p>
+<p>== 比较的是指向对象的内存地址；<br>equals() 通常情况下也会比较内存地址；<br>一些类如String()改写了equals()方法，比较的是String对象的值，而不是内存地址；<br>不同类型引用的 == 比较，会出现编译错误，不能比较；<br>equals方法，会先比较类型；<br>包装类的“==”运算在不遇到算术运算的情况下不会自动拆箱。</p>
+<p>3.append函数：想在字符串后面追加字符或字符串</p>
 <p>说明：<br>Stringbuffer有append()方法；<br>Stringbuffer其实是动态字符串数组；<br>append()是往动态字符串数组添加，跟“xxxx”+“yyyy”相比，相当那个‘+’号；<br>String1+String2 和Stringbuffer1.append(“yyyy”) 虽然打印效果一样，但在内存中表示却不一样，String1+String2 存在于不同的两个地址内存，Stringbuffer1.append(Stringbuffer2)放在一起；</p>
 <p>4.对象调用toString方法报错：记得声明对象不要在for循环里声明啊……位置啊位置！</p>
-<p>5.charAt方法：用于返回指定索引处的字符，</p>
+<p>5.charAt方法：用于返回指定索引处的字符。</p>
 <p>说明：<br>Java String类；<br>语法charAt(int index)；<br>返回指定索引处的字符；</p>
 <p><strong>这次做的题：</strong></p>
 <p>请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>

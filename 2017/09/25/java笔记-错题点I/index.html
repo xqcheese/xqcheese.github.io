@@ -5,16 +5,16 @@
   
   <title>java笔记-错题点I - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性等。">
+  <meta name="description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性、sleep()和wait()方法等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java笔记-错题点I">
 <meta property="og:url" content="http://yoursite.com/2017/09/25/java笔记-错题点I/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性等。">
-<meta property="og:updated_time" content="2017-09-29T03:15:25.022Z">
+<meta property="og:description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性、sleep()和wait()方法等。">
+<meta property="og:updated_time" content="2017-10-01T12:10:00.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点I">
-<meta name="twitter:description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性等。">
+<meta name="twitter:description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性、sleep()和wait()方法等。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,7 +82,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>做java专项练习时候错了超多题，模糊的点记在这里。<br>这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性等。</p>
+        <p>做java专项练习时候错了超多题，模糊的点记在这里。<br>这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性、sleep()和wait()方法等。</p>
 <a id="more"></a>
 <hr>
 <p>1.super关键字在子类内部使用，代表父类对象。子类构造方法需要调用父类的构造方法时，在子类的构造方法体里最前面的位置。<br>访问父类的属性：super.属性名；<br>访问父类的方法：super.方法名()。</p>
@@ -102,7 +102,13 @@
 <p>9.关于java中的几个类可否被继承：</p>
 <p>Thread可以被继承，用于创建新的线程；<br>Number类可以被继承，Integer，Float，Double等都继承自Number类；<br>Double类的声明为<code>public final class Doubleextends Numberimplements Comparable&lt;Double&gt;</code>，final声明的类不能被继承；<br>Math类的声明为<code>public final class Mathextends Object</code>，不能被继承；<br>ClassLoader可以被继承，用户可以自定义类加载器。</p>
 <p>10.Thread.sleep() 和 Object.wait(),都可以抛出 InterruptedException。这个异常是不能忽略的,因为它是一个检查异常(checked exception)。</p>
-<p>11.在web开发中可以实现会话跟踪的技术：<br>session，cookie，地址重写（在URL中附加会话信息），隐藏域（表单隐藏域）。</p>
+<p>wait()和sleep()都必须进行异常捕获，即try catch；<br>调用wait()或notify()方法必须采用当前锁调用，即必须采用synchronized中的对象。</p>
+<p>wait，notify和notifyAll只能在同步控制方法或者同步控制块里面使用，而sleep可以在任何地方使用。</p>
+<p>sleep是线程类（Thread）的方法，导致此线程暂停执行指定时间，给执行机会给其他线程，但是监控状态依然保持，到时后会自动恢复。调用sleep不会释放对象锁。</p>
+<p>wait是Object类的方法，对此对象调用wait方法导致本线程放弃对象锁，进入等待此对象的等待锁定池，只有针对此对象发出notify方法（或notifyAll）后本线程才进入对象锁定池准备获得对象锁进入运行状态。</p>
+<p>如果线程A希望立即结束线程B，则可以对线程B对应的Thread实例调用interrupt方法。如果此刻线程B正在wait/sleep/join，则线程B会立刻抛出InterruptedException，在catch() {} 中直接return即可安全地结束线程。 </p>
+<p>11.在web开发中可以实现会话跟踪的技术：</p>
+<p>session，cookie，地址重写（在URL中附加会话信息），隐藏域（表单隐藏域）。</p>
 <hr>
 
       
