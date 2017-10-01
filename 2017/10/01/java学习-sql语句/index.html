@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java学习-sql语句 - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一些简单的关于SQL语句的总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习-sql语句">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/java学习-sql语句/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="一些简单的关于SQL语句的总结。">
+<meta property="og:updated_time" content="2017-10-01T16:22:19.780Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习-sql语句">
+<meta name="twitter:description" content="一些简单的关于SQL语句的总结。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java学习-sql语句" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java学习-sql语句
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/10/01/java学习-sql语句/" class="article-date">
+  <time datetime="2017-09-30T16:00:00.000Z" itemprop="datePublished">2017-10-01</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一些简单的关于SQL语句的总结。</p>
+<a id="more"></a>
+<hr>
+<p>SQL指结构化查询语言。</p>
+<p>SQL语句对大小写不敏感。</p>
+<p>索引：索引于表相当于目录于书。索引表是与基本表关联的一种数据结构，它包含由基本表中的一列或多列生成的索引键和基本表中包含各个索引键的行所在的存储位置。不论基本表中是否按索引键有序，但索引中总是按索引键有序的。</p>
+<p>select语句执行顺序：from - where - group by - having - select - order by</p>
+<p><br\><br>1.创建数据库：CREATE DATABASE dbname</br\></p>
+<p>2.删除数据库：DROP DATABASE dbname</p>
+<p>3.创建新表：create table tbname(col1 type1 [not null][primary key],col2 type2[not null],…)</p>
+<p>4.删除新表：drop table tbname</p>
+<p>5.更改表：alter table tbname</p>
+<p>(1)增加一个列：alter table tbname add column colname type<br>(2)添加主键：alter table tbname add primary key(colname)<br>(3)删除主键：alter table tbname drop primary key(colname)<br>(4)添加列：alter table tbname add colname type<br>(5)删除列：alter table tbname drop column colname</p>
+<p>6.创建索引：create [unique] index idxname on tbname(col…)</p>
+<p>7.删除索引：drop index idxname</p>
+<p>8.创建视图：create view vname as select statement</p>
+<p>9.删除视图：drop view vname</p>
+<p><br\><br>10.查询：<br>一般语句：select <em> from tbname (where condition1 and condition2)<br>查找消除取值重复的行：select distinct sno from tbname<br>查找条件模糊或者字符匹配的字段：<br>select </em> from tbname where sname like ‘王%’【sname为姓名，% 代表任意长度（长度可以为0）的字符串】<br>select * from tbname where sno like ‘13<em>0322’【sno为学号，</em> (下横线) 代表任意单个字符】</br\></p>
+<p>11.插入：<br>insert into tbname values (value1,value2,…)<br>insert into tbname (col1,col2,…) values (value1,value2,…)</p>
+<p>12.删除：delete from tbname where condition</p>
+<p>13.更新：update tbname set colname=value where condition</p>
+<p>14.排序：select * from tbname where condition order by colname [asc|desc]【升序|降序】</p>
+<p>15.输出结果（前n行）：select (top n) sno,sum(grade) as ‘总分’ from tbname【sno为学号，grade为成绩】<br>查询结果集输出到新表中：select sno into newtbname from tbname where condition</p>
+<p><br\><br>16.集合运算：UNION（并）,INTERSECT（交）,EXPECT（差）</br\></p>
+<p>如：select sname from tbname1 where condition1 UNION select cname from tbname2 where condition2【满足表一中条件一并且满足表二中条件二的】</p>
+<p>17.简单分组查询：</p>
+<p>select sex,count(*) as ‘人数’ from tbname where condition group by sex [having condition]<br>select sno,avg(grade) as ‘avg of score’ from tbname where condition group by sno having avg(grade)&gt;60 order by ‘avg of score’</p>
+<p>18.两表联查：select * from tbname1 full (outer) join tbname2 on joincondition[e.g. tbname1.a=tbname2.c]</p>
+<p>19.子查询：select sname from tbname1 where sno in (select sno from tbname2 where condition)</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql语句/">sql语句</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/29/java笔记-错题点IV/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java笔记-错题点IV&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>
