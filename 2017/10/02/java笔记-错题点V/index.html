@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java笔记-错题点V - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java笔记-错题点V">
+<meta property="og:url" content="http://yoursite.com/2017/10/02/java笔记-错题点V/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配。">
+<meta property="og:updated_time" content="2017-10-02T12:16:32.151Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java笔记-错题点V">
+<meta name="twitter:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java笔记-错题点V" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java笔记-错题点V
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/10/02/java笔记-错题点V/" class="article-date">
+  <time datetime="2017-10-01T16:00:00.000Z" itemprop="datePublished">2017-10-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java专项练习模糊点第五弹。<br>包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配。</p>
+<a id="more"></a>
+<hr>
+<p>1.垃圾回收：</p>
+<p>Java的内存释放由垃圾回收程序来进行释放，程序员不能直接进行释放；<br>垃圾回收程序是一般是在堆上分配空间不够的时候会自己进行一次GC，程序员不需要也不能主动释放内存；<br>程序员可以调用System.gc()运行垃圾回收器，但是不能指定时间。</p>
+<p>2.接口里定义的是常量，即使定义<code>public int a;</code>，底层语言也会默认加上<code>public static final int a;</code>转为常量。</p>
+<p>3.正则表达式的贪婪与非贪婪匹配：</p>
+<p>如：<code>String str=&quot;abcaxc&quot;; Patter p=&quot;ab*c&quot;;</code></p>
+<p>贪婪匹配:正则表达式一般趋向于最大长度匹配，也就是所谓的贪婪匹配。如上面使用模式p匹配字符串str，结果就是匹配到：abcaxc(ab<em>c)。<br>非贪婪匹配：就是匹配到结果就好，就少的匹配字符。如上面使用模式p匹配字符串str，结果就是匹配到：abc(ab</em>c)。</p>
+<p>编程中默认是贪婪模式，在量词后直接加上一个问号“?”，就是非贪婪模式。<br>量词：<br>{m,n}：m到n个<br>*：任意多个<br>+：一个到多个<br>?：0或一个</p>
+<p>栗子：截取字符串中第一个出现的英文左括号之前的字符串。比如：北京市（海淀区）（朝阳区）（西城区），截取结果为：北京市。</p>
+<p>【.表示除\n之外的任意字符；<br><em>表示匹配大于等于0；<br>+表示匹配大于等于1；<br>(?=Expression) 顺序环视；<br>(?=\()就是匹配正括号】<br>懒惰模式正则：<br>`src=”.</em>?(?=\()”`<br>结果：北京市<br>因为匹配到第一个”(“就结束了一次匹配，不会继续向后匹配，毕竟不贪婪。</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/01/java学习-sql语句/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java学习-sql语句&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>

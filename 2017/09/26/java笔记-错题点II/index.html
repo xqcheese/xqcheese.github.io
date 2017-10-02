@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/26/java笔记-错题点II/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
-<meta property="og:updated_time" content="2017-09-30T02:29:07.752Z">
+<meta property="og:updated_time" content="2017-10-02T11:58:09.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点II">
 <meta name="twitter:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
@@ -100,7 +100,12 @@
 <p>【解释也没看懂……之后自己再回来看这个吧】</p>
 <p>7.关于java异常处理：</p>
 <p>throws用于在方法上声明该方法不需要处理的异常类型,用在方法上后面跟异常类名 可以是多个异常类；<br>throw用于抛出具体异常类的对象,用在方法内，后面跟异常对象只能是一个异常类型实体。<br>try块必须和catch块或和finally同在,不能单独存在,二者必须出现一个。<br>finally块总会执行,不论是否有错误出现。但是若try语句块或会执行的catch语句块使用了JVM系统退出语句,finally块就不会被执行了。一般我们把关闭资源的代码放在finally里面，保证资源总是能关闭。</p>
-<p>try没执行，所以没有异常抛出，程序继续，finally必须执行，try外部代码执行；<br>try执行，抛出异常，程序中断，执行catch，最后执行finally，程序结束。</p>
+<p>try没执行，所以没有异常抛出，程序继续，finally必须执行，try外部代码执行；<br>try执行，抛出异常，程序中断，执行catch，最后执行finally，程序结束；<br>即无论有没有异常，finally块中的代码都会执行。</p>
+<p>假设利用return语句从try语句块中退出。在方法返回前，finally子句的内容将被执行。如果finally子句中也有一个return语句，这个返回值将会覆盖原始的返回值。<br>如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        int k = f_test();</div><div class="line">        System.out.println(k);</div><div class="line">&#125;</div><div class="line">     </div><div class="line">    public static int f_test()&#123;</div><div class="line">        int a = 0;</div><div class="line">        try&#123;</div><div class="line">            a = 1;</div><div class="line">            return a;</div><div class="line">        &#125;</div><div class="line">        finally&#123;</div><div class="line">            System.out.println(&quot;It is in final chunk.&quot;);</div><div class="line">            a = 2;</div><div class="line">            return a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>会输出：<br>It is in final chunk.<br>2</p>
+<p>如果注释掉finally里的<code>return a;</code><br>则输出：<br>It is in final chunk.<br>1</p>
+<p>即finally是在return后面的表达式运算后执行的（此时并没有返回运算后的值，而是先把要返回的值保存起来，不管finally中的代码怎么样，返回的值都不会改变，仍然是之前保存的值），所以函数返回值是在finally执行前确定的；</p>
+<p>所以finally中最好不要包含return，否则程序会提前退出，返回值不是try或catch中保存的返回值。</p>
 <hr>
 
       
