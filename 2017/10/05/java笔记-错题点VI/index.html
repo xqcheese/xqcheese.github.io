@@ -5,16 +5,16 @@
   
   <title>java笔记-错题点VI - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java专项练习模糊点第六弹。">
+  <meta name="description" content="java专项练习模糊点第六弹。包括线程安全、内联函数、字符与字符串常量等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java笔记-错题点VI">
 <meta property="og:url" content="http://yoursite.com/2017/10/05/java笔记-错题点VI/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="java专项练习模糊点第六弹。">
-<meta property="og:updated_time" content="2017-10-08T11:44:15.279Z">
+<meta property="og:description" content="java专项练习模糊点第六弹。包括线程安全、内联函数、字符与字符串常量等。">
+<meta property="og:updated_time" content="2017-10-10T12:40:56.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点VI">
-<meta name="twitter:description" content="java专项练习模糊点第六弹。">
+<meta name="twitter:description" content="java专项练习模糊点第六弹。包括线程安全、内联函数、字符与字符串常量等。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,7 +82,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>java专项练习模糊点第六弹。</p>
+        <p>java专项练习模糊点第六弹。<br>包括线程安全、内联函数、字符与字符串常量等。</p>
 <a id="more"></a>
 <hr>
 <p>1.true、false、null都不是关键字；<br>goto、const是保留的关键字；<br>java的关键字全部都是小写的。</p>
@@ -100,6 +100,12 @@
 <p>如果你的代码所在的进程中有多个线程在同时运行，而这些线程可能会同时运行这段代码。如果每次运行结果和单线程运行的结果是一样的，而且其他的变量的值也和预期的是一样的，就是线程安全的。<br>或者说:一个类或者程序所提供的接口对于线程来说是原子操作或者多个线程之间的切换不会导致该接口的执行结果存在二义性,也就是说我们不用考虑同步的问题。</p>
 <p>线程安全问题都是由全局变量及静态变量引起的。</p>
 <p>若每个线程中对全局变量、静态变量只有读操作，而无写操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，否则就可能影响线程安全。</p>
+<hr>
+<p>2017-10-10</p>
+<p>1.内联函数：</p>
+<p>内联函数就是在程序编译时，编译器将程序中出现的内联函数的调用表达式用内联函数的函数体来直接进行替换。<br>这样就不会产生转去转回的问题，但是由于在编译时将函数体中的代码被替代到程序中，因此会增加目标程序代码量，进而增加空间开销，而在时间代销上不象函数调用时那么大。<br>因此，函数代码小，频繁调用的函数适合采用内联函数。</p>
+<p>2.字符与字符串常量</p>
+<p>字符常量：一个字符常量表示为一个字符或一个转义序列（\b,\t,\n,\f,\r,\”,\’,\等），被一对ASCII单引号关闭。<br>字符串常量：一对双引号关闭。</p>
 <hr>
 
       
