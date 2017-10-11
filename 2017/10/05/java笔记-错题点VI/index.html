@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/05/java笔记-错题点VI/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="java专项练习模糊点第六弹。包括线程安全、内联函数、字符与字符串常量、ThreadLocal类等。">
-<meta property="og:updated_time" content="2017-10-11T09:40:13.139Z">
+<meta property="og:updated_time" content="2017-10-11T09:46:32.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点VI">
 <meta name="twitter:description" content="java专项练习模糊点第六弹。包括线程安全、内联函数、字符与字符串常量、ThreadLocal类等。">
@@ -105,7 +105,7 @@
 <p>1.内联函数：</p>
 <p>内联函数就是在程序编译时，编译器将程序中出现的内联函数的调用表达式用内联函数的函数体来直接进行替换。<br>这样就不会产生转去转回的问题，但是由于在编译时将函数体中的代码被替代到程序中，因此会增加目标程序代码量，进而增加空间开销，而在时间代销上不象函数调用时那么大。<br>因此，函数代码小，频繁调用的函数适合采用内联函数。</p>
 <p>2.字符与字符串常量</p>
-<p>字符常量：一个字符常量表示为一个字符或一个转义序列（\b,\t,\n,\f,\r,\”,\’,\等），被一对ASCII单引号关闭。<br>字符串常量：一对双引号关闭。</p>
+<p>字符常量：一个字符常量表示为一个字符或一个转义序列（<code>\b</code>,<code>\t</code>,<code>\n</code>,<code>\f</code>,<code>\r</code>,<code>\&quot;</code>【双引号符】,<code>\&#39;</code>【单引号符】,<code>\\</code>【反斜杠符】等），被一对ASCII单引号关闭。<br>字符串常量：一对双引号关闭。</p>
 <hr>
 <p>2017-10-11</p>
 <p>1.能被java.exe成功运行的java class文件必须有main()方法,main()方法是入口；<br>能被Appletviewer成功运行的java class文件不是必须有main()方法，因为Appletviewer是运行applet的，applet不用main方法，继承applet类即可。</p>
