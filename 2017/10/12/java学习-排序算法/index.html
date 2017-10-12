@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java学习-排序方法 - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于排序方法的简单总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习-排序方法">
+<meta property="og:url" content="http://yoursite.com/2017/10/12/java学习-排序算法/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="关于排序方法的简单总结。">
+<meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.png">
+<meta property="og:image" content="http://on9eybn3x.bkt.clouddn.com/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.png">
+<meta property="og:updated_time" content="2017-10-12T03:20:30.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习-排序方法">
+<meta name="twitter:description" content="关于排序方法的简单总结。">
+<meta name="twitter:image" content="http://on9eybn3x.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java学习-排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java学习-排序方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/10/12/java学习-排序算法/" class="article-date">
+  <time datetime="2017-10-11T16:00:00.000Z" itemprop="datePublished">2017-10-12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于排序方法的简单总结。</p>
+<a id="more"></a>
+<hr>
+<p>1.稳定性：假设记录中存在两个关键字相等的记录，若排序后两个记录的顺序不变，则所用的排序方法是稳定的，若可能使排序后的序列中两个记录的顺序变化，则方法是不稳定的。</p>
+<p>2.内部排序和外部排序：</p>
+<p>内部排序指的是待排序记录存放在计算机随机储存器中进行的排序过程；<br>外部排序指的是待排序记录数量很大，以致内存一次不能容纳全部记录，在排序过程中尚需对外存进行访问的排序过程。</p>
+<p>3.常用的五大类内部排序：插入（直接插入、希尔等）、交换（起泡、快速等）、选择（直接选择、堆排序等）、归并、基数排序。</p>
+<p>4.直接插入排序：</p>
+<p>基本操作：将一个记录插入到已排好序的有序表中</p>
+<p>稳定性：稳定</p>
+<p>时间复杂度：O(n^2)</p>
+<p>空间复杂度：O(1)</p>
+<p>5.起泡排序：</p>
+<p>基本操作：将第一个记录的关键字和第二个记录的关键字进行比较，若为逆序，则将两个记录交换，然后比较第二个和第三个记录的关键字，依次类推，直至第n-1个记录和第n个记录的关键字进行过比较为止。上述过程称作第一趟起泡排序，其结果使得关键字最大的记录被安置到最后一个记录的位置上。然后进行第二趟起泡排序，……</p>
+<p>稳定性：稳定</p>
+<p>时间复杂度：O(n^2)</p>
+<p>空间复杂度：O(1)</p>
+<p>6.快速排序：</p>
+<p>基本操作：附设两个指针low和high，它们的初值分别为low和high，设枢轴（一般选为第一个记录）记录的关键字为pivotkey，则首先从high所指位置起向前搜索找到第一个关键字小于pivotkey的记录和枢轴记录互相交换，然后从low所指位置起向后搜索，找到第一个关键字大于pivotkey的记录和枢轴记录互相交换，重复这两步直至low=high为止。算法如下图所示：</p>
+<p><img src="http://on9eybn3x.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.png"></p>
+<p>稳定性：不稳定</p>
+<p>时间复杂度：O(nlogn)</p>
+<p>空间复杂度：O(logn)</p>
+<p>7.归并排序：</p>
+<p>基本操作：将两个或两个以上的有序表组合成一个有序表。两两归并，再两两归并，……<br>具体过程见下图：</p>
+<p><img src="http://on9eybn3x.bkt.clouddn.com/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.png"></p>
+<p>稳定性：稳定</p>
+<p>时间复杂度：O(nlogn)</p>
+<p>空间复杂度：O(n)</p>
+<p>8.基数排序：</p>
+<p>借助多关键字排序的思想对单逻辑关键字进行排序</p>
+<p>时间复杂度：O(n)</p>
+<p>空间复杂度：O(1)</p>
+<p>9.堆排序：</p>
+<p>大根堆、小根堆</p>
+<p>时间复杂度：O(nlogn)</p>
+<p>空间复杂度：O(1)</p>
+<p>10.从平均时间性能而言，快速排序最佳，其所需时间最省，但快速排序在最坏情况下的时间性能不如堆排序和归并排序。</p>
+<p>从方法的稳定性来比较，基数排序是稳定的内排方法，然而，快速排序、堆排序、希尔排序等时间性能较好的排序方法都是不稳定的。</p>
+<p>直接插入排序最简单，当序列中的记录“基本有序”或n值较小时，它是最佳的排序方法。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br><br></h2>
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序方法/">排序方法</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/05/java笔记-错题点VI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java笔记-错题点VI&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>
