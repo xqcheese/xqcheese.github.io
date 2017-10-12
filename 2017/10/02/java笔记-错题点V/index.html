@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/02/java笔记-错题点V/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。">
-<meta property="og:updated_time" content="2017-10-04T13:47:43.217Z">
+<meta property="og:updated_time" content="2017-10-12T06:20:53.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-错题点V">
 <meta name="twitter:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。">
@@ -93,7 +93,7 @@
 <p>贪婪匹配:正则表达式一般趋向于最大长度匹配，也就是所谓的贪婪匹配。如上面使用模式p匹配字符串str，结果就是匹配到：abcaxc(ab<em>c)。<br>非贪婪匹配：就是匹配到结果就好，就少的匹配字符。如上面使用模式p匹配字符串str，结果就是匹配到：abc(ab</em>c)。</p>
 <p>编程中默认是贪婪模式，在量词后直接加上一个问号“?”，就是非贪婪模式。<br>量词：<br>{m,n}：m到n个<br>*：任意多个<br>+：一个到多个<br>?：0或一个</p>
 <p>栗子：截取字符串中第一个出现的英文左括号之前的字符串。比如：北京市（海淀区）（朝阳区）（西城区），截取结果为：北京市。</p>
-<p>【.表示除\n之外的任意字符；<br><em>表示匹配大于等于0；<br>+表示匹配大于等于1；<br>(?=Expression) 顺序环视；<br>(?=\()就是匹配正括号】<br>懒惰模式正则：<br>`src=”.</em>?(?=\()”`<br>结果：北京市<br>因为匹配到第一个”(“就结束了一次匹配，不会继续向后匹配，毕竟不贪婪。</p>
+<p>【.表示除\n之外的任意字符；<br><code>*</code>表示匹配大于等于0；<br>+表示匹配大于等于1；<br>(?=Expression) 顺序环视；<br>(?=\()就是匹配正括号】<br>懒惰模式正则：<br><code>src=&quot;.*?(?=\\()&quot;</code><br>结果：北京市<br>因为匹配到第一个”(“就结束了一次匹配，不会继续向后匹配，毕竟不贪婪。</p>
 <p><br\></br\></p>
 <hr>
 <p>2017-10-03</p>

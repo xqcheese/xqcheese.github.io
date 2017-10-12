@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/01/java学习-sql语句/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="一些简单的关于SQL语句的总结。">
-<meta property="og:updated_time" content="2017-10-01T16:22:19.780Z">
+<meta property="og:updated_time" content="2017-10-12T06:27:53.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习-sql语句">
 <meta name="twitter:description" content="一些简单的关于SQL语句的总结。">
@@ -99,7 +99,7 @@
 <p>7.删除索引：drop index idxname</p>
 <p>8.创建视图：create view vname as select statement</p>
 <p>9.删除视图：drop view vname</p>
-<p><br\><br>10.查询：<br>一般语句：select <em> from tbname (where condition1 and condition2)<br>查找消除取值重复的行：select distinct sno from tbname<br>查找条件模糊或者字符匹配的字段：<br>select </em> from tbname where sname like ‘王%’【sname为姓名，% 代表任意长度（长度可以为0）的字符串】<br>select * from tbname where sno like ‘13<em>0322’【sno为学号，</em> (下横线) 代表任意单个字符】</br\></p>
+<p><br\><br>10.查询：<br>一般语句：<code>select * from tbname (where condition1 and condition2)</code><br>查找消除取值重复的行：<code>select distinct sno from tbname</code><br>查找条件模糊或者字符匹配的字段：<br><code>select * from tbname where sname like &#39;王%&#39;</code>【sname为姓名，% 代表任意长度（长度可以为0）的字符串】<br><code>select * from tbname where sno like &#39;13_0322&#39;</code>【sno为学号，_ (下横线) 代表任意单个字符】</br\></p>
 <p>11.插入：<br>insert into tbname values (value1,value2,…)<br>insert into tbname (col1,col2,…) values (value1,value2,…)</p>
 <p>12.删除：delete from tbname where condition</p>
 <p>13.更新：update tbname set colname=value where condition</p>
