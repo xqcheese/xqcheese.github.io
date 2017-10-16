@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java笔记-做题点III - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="java专项练习模糊点第三弹。包括servlet和CGI、switch语句、内存的存储区、抽象方法等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java笔记-做题点III">
+<meta property="og:url" content="http://yoursite.com/2017/09/27/java笔记-做题点III/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="java专项练习模糊点第三弹。包括servlet和CGI、switch语句、内存的存储区、抽象方法等。">
+<meta property="og:updated_time" content="2017-10-16T03:05:20.260Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java笔记-做题点III">
+<meta name="twitter:description" content="java专项练习模糊点第三弹。包括servlet和CGI、switch语句、内存的存储区、抽象方法等。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java笔记-做题点III" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java笔记-做题点III
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/09/27/java笔记-做题点III/" class="article-date">
+  <time datetime="2017-09-26T16:00:00.000Z" itemprop="datePublished">2017-09-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java专项练习模糊点第三弹。<br>包括servlet和CGI、switch语句、内存的存储区、抽象方法等。</p>
+<a id="more"></a>
+<hr>
+<p>1.java的跨平台特性是指，编译后的文件跨平台，而不是源程序跨平台。</p>
+<p>2.servlet和CGI：</p>
+<p>servlet处于服务器进程中，它通过多线程方式运行其service方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于servlet。</p>
+<p>传统的CGI程序，不具备平台无关性特征，系统环境发生变化，CGI程序就要瘫痪，而Servlet具备Java的平台无关性，在系统开发过程中保持了系统的可扩展性、高效性。</p>
+<p>3.switch语句后的控制表达式只能是short、char、int、long整数类型和枚举类型，不能是float，double和boolean类型。String类型是java7开始支持。 </p>
+<hr>
+<p>2017-09-28</p>
+<p>1.内存的储存区：</p>
+<p>堆区：只存放类对象，线程共享；<br>方法区：又叫静态存储区，存放class文件和静态数据，线程共享;<br>栈区：存放方法局部变量，基本类型变量区、执行环境上下文、操作指令区，线程不共享。</p>
+<p>2.关于抽象方法：</p>
+<p>抽象方法是仅声明，并不做实现的方法，抽象方法没有实体时候，大括号必须省略；<br>抽象类不能被实例化，实例化的工作应该交由它的子类来完成，它只需要有一个引用即可；<br>抽象方法必须由子类来进行重写；<br>只要包含一个抽象方法的类，该类必须要定义成抽象类，不管是否还包含有其他方法；<br>抽象类中可以包含具体的方法，当然也可以不包含抽象方法；<br>abstract不能与final并列修饰同一个类；<br>abstract 不能与private、static、final或native并列修饰同一个方法。<br>【抽象类和接口的对比见[java笔记-基础点I](<a href="https://xqcheese.github.io/2017/09/24/java%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%82%B9I/）】" target="_blank" rel="external">https://xqcheese.github.io/2017/09/24/java%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%82%B9I/）】</a></p>
+<hr>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/29/java笔记-做题点IV/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          java笔记-做题点IV
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/26/java笔记-做题点II/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java笔记-做题点II&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>

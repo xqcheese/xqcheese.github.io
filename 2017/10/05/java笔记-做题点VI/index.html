@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java笔记-做题点VI - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="java专项练习模糊点第六弹。包括线程安全、内联函数、字符与字符串常量、ThreadLocal类、进制、Java中修饰符、数组的声明等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java笔记-做题点VI">
+<meta property="og:url" content="http://yoursite.com/2017/10/05/java笔记-做题点VI/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="java专项练习模糊点第六弹。包括线程安全、内联函数、字符与字符串常量、ThreadLocal类、进制、Java中修饰符、数组的声明等。">
+<meta property="og:updated_time" content="2017-10-16T03:05:59.672Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java笔记-做题点VI">
+<meta name="twitter:description" content="java专项练习模糊点第六弹。包括线程安全、内联函数、字符与字符串常量、ThreadLocal类、进制、Java中修饰符、数组的声明等。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java笔记-做题点VI" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java笔记-做题点VI
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/10/05/java笔记-做题点VI/" class="article-date">
+  <time datetime="2017-10-04T16:00:00.000Z" itemprop="datePublished">2017-10-05</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java专项练习模糊点第六弹。<br>包括线程安全、内联函数、字符与字符串常量、ThreadLocal类、进制、Java中修饰符、数组的声明等。</p>
+<a id="more"></a>
+<hr>
+<p>1.true、false、null都不是关键字；<br>goto、const是保留的关键字；<br>java的关键字全部都是小写的。</p>
+<p>2.Java集合框架主要由Collection和Map两个根接口及其子接口、实现类组成。 collection 的子接口包括List,set,queue。而Map包括三个实现类HashMap，HashTable，LinkeHashMap。</p>
+<hr>
+<p>2017-10-08</p>
+<p>1.ResultSet中记录行的第一列索引为1。</p>
+<p>2.静态变量只能在类主体中定义，不能在方法中定义。</p>
+<p>3.以下片段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">byte b1=1,b2=2,b3,b6; </div><div class="line">final byte b4=4,b5=6; </div><div class="line">b6=b4+b5; </div><div class="line">b3=(b1+b2); </div><div class="line">System.out.println(b3+b6);</div></pre></td></tr></table></figure></p>
+<p>会在语句：b3=b1+b2编译出错。</p>
+<p>因为被final修饰的变量是常量，这里的b6=b4+b5可以看成是b6=10；在编译时就已经变为b6=10了。而b1和b2是byte类型，java中进行计算时候将他们提升为int类型，再进行计算，b1+b2计算后已经是int类型，赋值给b3，b3是byte类型，类型不匹配，编译不会通过，需要进行强制转换。<br>Java中的byte，short，char进行计算时都会提升为int类型。</p>
+<p>4.java中的线程安全：</p>
+<p>就是线程同步的意思，就是当一个程序对一个线程安全的方法或者语句进行访问的时候，其他的不能再对他进行操作了，必须等到这次访问结束以后才能对这个线程安全的方法进行访问。</p>
+<p>什么叫线程安全：</p>
+<p>如果你的代码所在的进程中有多个线程在同时运行，而这些线程可能会同时运行这段代码。如果每次运行结果和单线程运行的结果是一样的，而且其他的变量的值也和预期的是一样的，就是线程安全的。<br>或者说:一个类或者程序所提供的接口对于线程来说是原子操作或者多个线程之间的切换不会导致该接口的执行结果存在二义性,也就是说我们不用考虑同步的问题。</p>
+<p>线程安全问题都是由全局变量及静态变量引起的。</p>
+<p>若每个线程中对全局变量、静态变量只有读操作，而无写操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，否则就可能影响线程安全。</p>
+<hr>
+<p>2017-10-10</p>
+<p>1.内联函数：</p>
+<p>内联函数就是在程序编译时，编译器将程序中出现的内联函数的调用表达式用内联函数的函数体来直接进行替换。<br>这样就不会产生转去转回的问题，但是由于在编译时将函数体中的代码被替代到程序中，因此会增加目标程序代码量，进而增加空间开销，而在时间代销上不象函数调用时那么大。<br>因此，函数代码小，频繁调用的函数适合采用内联函数。</p>
+<p>2.字符与字符串常量</p>
+<p>字符常量：一个字符常量表示为一个字符或一个转义序列（<code>\b</code>,<code>\t</code>,<code>\n</code>,<code>\f</code>,<code>\r</code>,<code>\&quot;</code>【双引号符】,<code>\&#39;</code>【单引号符】,<code>\\</code>【反斜杠符】等），被一对ASCII单引号关闭。<br>字符串常量：一对双引号关闭。</p>
+<hr>
+<p>2017-10-11</p>
+<p>1.能被java.exe成功运行的java class文件必须有main()方法,main()方法是入口；<br>能被Appletviewer成功运行的java class文件不是必须有main()方法，因为Appletviewer是运行applet的，applet不用main方法，继承applet类即可。</p>
+<p>2.instance是java的二元运算符，用来判断他左边的对象是否为右面类（接口，抽象类，父类）的实例。</p>
+<p>3.关于ThreadLocal类：</p>
+<p>它的声明：public class ThreadLocal<t>，由此可见，ThreadLocal并没有继承自Thread，也没有实现Runnable接口；<br>它继承Object，相当于没继承任何特殊的；<br>ThreadLocal类为每一个线程都维护了自己独有的变量拷贝。每个线程都拥有了自己独立的一个变量。所以ThreadLocal重要作用并不在于多线程间的数据共享，而是数据的独立，线程之间不共享；<br>由于每个线程在访问该变量时，读取和修改的，都是自己独有的那一份变量拷贝，不会被其他线程访问，变量被彻底封闭在每个访问的线程中；<br>ThreadLocal中定义了一个哈希表用于为每个线程都提供一个变量的副本。</t></p>
+<hr>
+<p>2017-10-13</p>
+<p>1.进制（例如表示8）：</p>
+<p>十六进制：0x8<br>十进制：8<br>八进制：010<br>二进制：1000</p>
+<p>2.在Java中修饰符总共有一下几种：  </p>
+<p>访问控制修饰符<br>分别有：public private protected,缺省  </p>
+<p>其它修饰符  </p>
+<p>分别有：abstract,final,static,native,synchronized,transient,volatile等  </p>
+<p>对于形式参数只能用final修饰符，其它任何修饰符都会引起编译器错误 。但是用这个修饰符也有一定的限制，就是在方法中不能对参数做任何修改。  </p>
+<p>不过一般情况下，一个方法的形参不用final修饰。只有在特殊情况下，那就是：方法内部类。   </p>
+<p>一个方法内的内部类如果使用了这个方法的参数或者局部变量的话，这个参数或局部变量应该是final。</p>
+<p>3.在java 中，声明一个数组时，不能直接限定数组长度，只有在创建实例化对象时，才能对给定数组长度。<br>如下，1，2，3可以通过编译，4，5不行。<br>（1）String a[]=new String[50];<br>（2）String b[];<br>（3）char c[];<br>（4）String d[50];<br>（5）char e[50];</p>
+<hr>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/12/java学习-排序算法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          java学习-排序方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/02/java笔记-做题点V/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java笔记-做题点V&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>

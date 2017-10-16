@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java笔记-做题点I - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性、sleep()和wait()方法等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java笔记-做题点I">
+<meta property="og:url" content="http://yoursite.com/2017/09/25/java笔记-做题点I/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性、sleep()和wait()方法等。">
+<meta property="og:updated_time" content="2017-10-16T03:05:03.051Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java笔记-做题点I">
+<meta name="twitter:description" content="做java专项练习时候错了超多题，模糊的点记在这里。这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性、sleep()和wait()方法等。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java笔记-做题点I" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java笔记-做题点I
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/09/25/java笔记-做题点I/" class="article-date">
+  <time datetime="2017-09-24T16:00:00.000Z" itemprop="datePublished">2017-09-25</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>做java专项练习时候错了超多题，模糊的点记在这里。<br>这里有super和this、System.out、访问权限、标识符命名规则、Ant和Maven、几个类的继承性、sleep()和wait()方法等。</p>
+<a id="more"></a>
+<hr>
+<p>1.super关键字在子类内部使用，代表父类对象。子类构造方法需要调用父类的构造方法时，在子类的构造方法体里最前面的位置。<br>访问父类的属性：super.属性名；<br>访问父类的方法：super.方法名()。</p>
+<p>2.关于System.out.println()：</p>
+<p>System是java.lang包下的一个类，out为System的final静态成员（PrintStream类型），println()是PrintStream类的实例方法。</p>
+<p>3.关于访问权限：</p>
+<p>public：可以被所有其他类所访问（同类、同包、子类、通用性）；<br>protected：自身、子类及同一个包中类可以访问（同类、同包、子类）；<br>default：同一包中的类可以访问（同类、同包）；<br>private：只能被自己访问和修改（同类）；<br>public&gt;protcted&gt;default&gt;priavte。</p>
+<p>对于外部类来说，只有两种修饰，public和默认（default），因为外部类放在包中，只有两种可能，包可见和包不可见。<br>对于内部类来说，可以有所有的修饰，因为内部类放在外部类中，与成员变量的地位一致，所以有四种可能。</p>
+<p>4.关于this和super关键字：</p>
+<p>this和super只能放在第一行；<br>this()和super()不可以同时出现在一个构造函数中；<br>this和super都无法出现在static 修饰的方法中;<br>super从子类中调用父类的构造方法，this()在同一类内调用其它方法。</p>
+<p>5.使用MVC即分层模式设计的web，可以清晰的发现问题，<strong>增强可维护性</strong>，面向接口的编程使程序的<strong>可扩展性增强</strong>，通过MVC统一的处理请求，可以<strong>减少代码的重复</strong>。</p>
+<p>6.标示符规则：</p>
+<p>数字+字符+$+下划线；<br>不能以数字开头；<br>不能是关键字。</p>
+<p>7.java中引入包的主要原因是跨平台特性的需求，但包不能实现跨平台功能，实现跨平台的是JVM。</p>
+<p>8.Ant和Maven：</p>
+<p>Ant和Maven都是基于Java的构建(build)工具。Ant是软件构建工具，Maven的定位是软件项目管理和理解工具。<br>Ant特点：<br>没有一个约定的目录结构；必须明确让ant做什么，什么时候做，然后编译，打包；没有生命周期，必须定义目标及其实现的任务序列；没有集成依赖管理。<br>Maven特点：<br>拥有约定，知道你的代码在哪里，放到哪里去；拥有一个生命周期，例如执行 mvn install 就可以自动执行编译，测试，打包等构建过程；只需要定义一个pom.xml,然后把源码放到默认的目录，Maven帮你处理其他事情；拥有依赖管理，仓库管理。</p>
+<p>9.关于java中的几个类可否被继承：</p>
+<p>Thread可以被继承，用于创建新的线程；<br>Number类可以被继承，Integer，Float，Double等都继承自Number类；<br>Double类的声明为<code>public final class Doubleextends Numberimplements Comparable&lt;Double&gt;</code>，final声明的类不能被继承；<br>Math类的声明为<code>public final class Mathextends Object</code>，不能被继承；<br>ClassLoader可以被继承，用户可以自定义类加载器。</p>
+<p>10.Thread.sleep() 和 Object.wait(),都可以抛出 InterruptedException。这个异常是不能忽略的,因为它是一个检查异常(checked exception)。</p>
+<p>wait()和sleep()都必须进行异常捕获，即try catch；<br>调用wait()或notify()方法必须采用当前锁调用，即必须采用synchronized中的对象。</p>
+<p>wait，notify和notifyAll只能在同步控制方法或者同步控制块里面使用，而sleep可以在任何地方使用。</p>
+<p>sleep是线程类（Thread）的方法，导致此线程暂停执行指定时间，给执行机会给其他线程，但是监控状态依然保持，到时后会自动恢复。调用sleep不会释放对象锁。</p>
+<p>wait是Object类的方法，对此对象调用wait方法导致本线程放弃对象锁，进入等待此对象的等待锁定池，只有针对此对象发出notify方法（或notifyAll）后本线程才进入对象锁定池准备获得对象锁进入运行状态。</p>
+<p>如果线程A希望立即结束线程B，则可以对线程B对应的Thread实例调用interrupt方法。如果此刻线程B正在wait/sleep/join，则线程B会立刻抛出InterruptedException，在catch() {} 中直接return即可安全地结束线程。 </p>
+<p>11.在web开发中可以实现会话跟踪的技术：</p>
+<p>session，cookie，地址重写（在URL中附加会话信息），隐藏域（表单隐藏域）。</p>
+<hr>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/26/java笔记-做题点II/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          java笔记-做题点II
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/24/java笔记-基础点I/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java笔记-基础点I&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>

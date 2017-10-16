@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java笔记-做题点II - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java笔记-做题点II">
+<meta property="og:url" content="http://yoursite.com/2017/09/26/java笔记-做题点II/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
+<meta property="og:updated_time" content="2017-10-16T03:05:10.438Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java笔记-做题点II">
+<meta name="twitter:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java笔记-做题点II" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java笔记-做题点II
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/09/26/java笔记-做题点II/" class="article-date">
+  <time datetime="2017-09-25T16:00:00.000Z" itemprop="datePublished">2017-09-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java专项练习模糊点第二弹。<br>包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。</p>
+<a id="more"></a>
+<hr>
+<p>1.关于异常的编程：</p>
+<p>异常分为运行时异常，非运行时异常和error。其中error是系统异常，只能重启系统解决；非运行时异常需要我们自己补获；而运行异常是程序运行时由虚拟机帮助我们补获，运行时异常包括数组的溢出，内存的溢出空指针，分母为0等；<br>输入输出流编程中，读和写时都要抛出IOException；<br><code>int a[]=null; a[0]=1;</code> 将产生NullPointerException；<br>在某些接口实现中我们通常需要捕获编译运行期所有的异常，用catch下Exception的实例进行捕获，因为catch下的error是系统出错，catch是无法处理的，难以修复的，RuntimeException不需要程序员进行捕获处理，error和exception都是throwable的子类。</p>
+<p>2.非静态变量不能够被静态方法引用。</p>
+<p>3.Hashtable和HashMap：</p>
+<p>（1）继承不同，但是都实现了Map接口。<br><code>public class Hashtable extends Dictionary implements Map</code><br><code>public class HashMap extends AbstractMap implements Map</code><br>（2）Hashtable 中的方法是同步的，而HashMap中的方法在缺省情况下是非同步的。在多线程并发的环境下，可以直接使用Hashtable，但是要使用HashMap的话就要自己增加同步处理了。<br>（3）Hashtable中，key和value都不允许出现null值；<br>在HashMap中，null可以作为键，这样的键只有一个；可以有一个或多个键所对应的值为null。当get()方法返回null值时，即可以表示 HashMap中没有该键，也可以表示该键所对应的值为null。因此，在HashMap中不能由get()方法来判断HashMap中是否存在某个键， 而应该用containsKey()方法来判断。<br>（4）两个遍历方式的内部实现上不同。<br>Hashtable、HashMap都使用了 Iterator。而由于历史原因，Hashtable还使用了Enumeration的方式 。<br>（5）哈希值的使用不同，HashTable直接使用对象的hashCode。而HashMap重新计算hash值。<br>（6）Hashtable和HashMap它们两个内部实现方式的数组的初始大小和扩容的方式。<br>HashTable中hash数组默认大小是11，增加的方式是 old*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。</p>
+<p>4.关于数组的创建：</p>
+<p><code>float f[][] = new float[6][6];</code><br><code>float []f[] = new float[6][6];</code><br><code>float [][]f = new float[6][6];</code><br><code>float [][]f = new float[6][];</code><br>以上均可，但是下面这种不可以：<code>float f[][] = new float[][6];</code>。</p>
+<p>即数组命名时名称与[]可以随意排列，但声明的二维数组中第一个中括号中必须要有值，它代表的是在该二维数组中有多少个一维数组。</p>
+<p>5.重写时候，子类方法的权限要大于等于父类方法的权限。</p>
+<p>6.一道题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">public class NameList</div><div class="line">&#123;</div><div class="line">    private List names = new ArrayList();</div><div class="line">    public synchronized void add(String name)</div><div class="line">    &#123;</div><div class="line">        names.add(name);</div><div class="line">    &#125;</div><div class="line">    public synchronized void printAll()     &#123;</div><div class="line">        for (int i = 0; i &lt; names.size(); i++)</div><div class="line">        &#123;</div><div class="line">            System.out.print(names.get(i) + ””);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public static void main(String[]args)</div><div class="line">    &#123;</div><div class="line">        final NameList sl = new NameList();</div><div class="line">        for (int i = 0; i &lt; 2; i++)</div><div class="line">        &#123;</div><div class="line">            new Thread()</div><div class="line">            &#123;</div><div class="line">                public void run()</div><div class="line">                &#123;</div><div class="line">                    sl.add(“A”);</div><div class="line">                    sl.add(“B”);</div><div class="line">                    sl.add(“C”);</div><div class="line">                    sl.printAll();</div><div class="line">                &#125;</div><div class="line">            &#125; .start();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Which two statements are true if this class is compiled and run?</div></pre></td></tr></table></figure>
+<p>answer：<br>The code may rum with output “A B C A B C A B C “, then exit.<br>The code may ruin with output “A B C A A B C A B C “, then exit.</p>
+<p>【解释也没看懂……之后自己再回来看这个吧】</p>
+<p>7.关于java异常处理：</p>
+<p>throws用于在方法上声明该方法不需要处理的异常类型,用在方法上后面跟异常类名 可以是多个异常类；<br>throw用于抛出具体异常类的对象,用在方法内，后面跟异常对象只能是一个异常类型实体。<br>try块必须和catch块或和finally同在,不能单独存在,二者必须出现一个。<br>finally块总会执行,不论是否有错误出现。但是若try语句块或会执行的catch语句块使用了JVM系统退出语句,finally块就不会被执行了。一般我们把关闭资源的代码放在finally里面，保证资源总是能关闭。</p>
+<p>try没执行，所以没有异常抛出，程序继续，finally必须执行，try外部代码执行；<br>try执行，抛出异常，程序中断，执行catch，最后执行finally，程序结束；<br>即无论有没有异常，finally块中的代码都会执行。</p>
+<p>假设利用return语句从try语句块中退出。在方法返回前，finally子句的内容将被执行。如果finally子句中也有一个return语句，这个返回值将会覆盖原始的返回值。<br>如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        int k = f_test();</div><div class="line">        System.out.println(k);</div><div class="line">&#125;</div><div class="line">     </div><div class="line">    public static int f_test()&#123;</div><div class="line">        int a = 0;</div><div class="line">        try&#123;</div><div class="line">            a = 1;</div><div class="line">            return a;</div><div class="line">        &#125;</div><div class="line">        finally&#123;</div><div class="line">            System.out.println(&quot;It is in final chunk.&quot;);</div><div class="line">            a = 2;</div><div class="line">            return a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>会输出：<br>It is in final chunk.<br>2</p>
+<p>如果注释掉finally里的<code>return a;</code><br>则输出：<br>It is in final chunk.<br>1</p>
+<p>即finally是在return后面的表达式运算后执行的（此时并没有返回运算后的值，而是先把要返回的值保存起来，不管finally中的代码怎么样，返回的值都不会改变，仍然是之前保存的值），所以函数返回值是在finally执行前确定的；</p>
+<p>所以finally中最好不要包含return，否则程序会提前退出，返回值不是try或catch中保存的返回值。</p>
+<hr>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/27/java笔记-做题点III/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          java笔记-做题点III
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/25/java笔记-做题点I/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java笔记-做题点I&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>

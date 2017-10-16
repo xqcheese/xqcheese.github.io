@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java笔记-做题点V - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java笔记-做题点V">
+<meta property="og:url" content="http://yoursite.com/2017/10/02/java笔记-做题点V/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。">
+<meta property="og:updated_time" content="2017-10-16T03:05:52.927Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java笔记-做题点V">
+<meta name="twitter:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java笔记-做题点V" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java笔记-做题点V
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/10/02/java笔记-做题点V/" class="article-date">
+  <time datetime="2017-10-01T16:00:00.000Z" itemprop="datePublished">2017-10-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java专项练习模糊点第五弹。<br>包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。</p>
+<a id="more"></a>
+<hr>
+<p>1.垃圾回收：</p>
+<p>Java的内存释放由垃圾回收程序来进行释放，程序员不能直接进行释放；<br>垃圾回收程序是一般是在堆上分配空间不够的时候会自己进行一次GC，程序员不需要也不能主动释放内存；<br>程序员可以调用System.gc()运行垃圾回收器，但是不能指定时间。</p>
+<p>2.接口里定义的是常量，即使定义<code>public int a;</code>，底层语言也会默认加上<code>public static final int a;</code>转为常量。</p>
+<p>3.正则表达式的贪婪与非贪婪匹配：</p>
+<p>如：<code>String str=&quot;abcaxc&quot;; Patter p=&quot;ab*c&quot;;</code></p>
+<p>贪婪匹配:正则表达式一般趋向于最大长度匹配，也就是所谓的贪婪匹配。如上面使用模式p匹配字符串str，结果就是匹配到：abcaxc(ab<em>c)。<br>非贪婪匹配：就是匹配到结果就好，就少的匹配字符。如上面使用模式p匹配字符串str，结果就是匹配到：abc(ab</em>c)。</p>
+<p>编程中默认是贪婪模式，在量词后直接加上一个问号“?”，就是非贪婪模式。<br>量词：<br>{m,n}：m到n个<br>*：任意多个<br>+：一个到多个<br>?：0或一个</p>
+<p>栗子：截取字符串中第一个出现的英文左括号之前的字符串。比如：北京市（海淀区）（朝阳区）（西城区），截取结果为：北京市。</p>
+<p>【.表示除\n之外的任意字符；<br><code>*</code>表示匹配大于等于0；<br>+表示匹配大于等于1；<br>(?=Expression) 顺序环视；<br>(?=\()就是匹配正括号】<br>懒惰模式正则：<br><code>src=&quot;.*?(?=\\()&quot;</code><br>结果：北京市<br>因为匹配到第一个”(“就结束了一次匹配，不会继续向后匹配，毕竟不贪婪。</p>
+<p><br\></br\></p>
+<hr>
+<p>2017-10-03</p>
+<p>1.非静态方法只能通过实例对象来调用，不能直接通过类名调用。静态方法（static）才能通过类名直接调用。</p>
+<p>2.关于构造函数：</p>
+<p>构造函数是类的一种特殊函数，它的方法名必须与类名相同，它的主要作用是完成对类的对象的初始化工作；<br>一般在创建新对象时，系统会自动调用构造函数；<br>每个类可以有多个构造方法，包括无参构造方法和有参构造方法，有参构造方法还可以通过重载写出多参的构造方法。</p>
+<p>3.结构型模式：</p>
+<p>描述如何将类对象结合在一起，形成一个更大的结构。结构模式描述两种不同的东西：类与类的实例，故可以分为类结构模式和对象结构模式。</p>
+<p>在GoF设计模式中，结构型模式有：<br>（1）适配器模式 Adapter<br>适配器模式是将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。<br>两个成熟的类需要通信，但是接口不同，由于开闭原则，我们不能去修改这两个类的接口，所以就需要一个适配器来完成衔接过程。<br>（2）桥接模式 Bridge<br>桥接模式将抽象部分与它的实现部分分离，是它们都可以独立地变化。它很好的支持了开闭原则和组合锯和复用原则。实现系统可能有多角度分类，每一种分类都有可能变化，那么就把这些多角度分离出来让他们独立变化，减少他们之间的耦合。<br>（3）组合模式 Composite<br>组合模式将对象组合成树形结构以表示部分-整体的层次结构，组合模式使得用户对单个对象和组合对象的使用具有一致性。<br>（4）装饰模式 Decorator<br>装饰模式动态地给一个对象添加一些额外的职责，就增加功能来说，它比生成子类更灵活。也可以这样说，装饰模式把复杂类中的核心职责和装饰功能区分开了，这样既简化了复杂类，又去除了相关类中重复的装饰逻辑。<strong>装饰模式没有通过继承原有类来扩展功能，但却达到了一样的目的，而且比继承更加灵活，所以可以说装饰模式是继承关系的一种替代方案。</strong><br>（5）外观模式 Facade<br>外观模式为子系统中的一组接口提供了同意的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。<br>外观模式中，客户对各个具体的子系统是不了解的，所以对这些子系统进行了封装，对外只提供了用户所明白的单一而简单的接口，用户直接使用这个接口就可以完成操作，而不用去理睬具体的过程，而且子系统的变化不会影响到用户，这样就做到了信息隐蔽。<br>（6）享元模式 Flyweight<br>享元模式为运用共享技术有效的支持大量细粒度的对象。因为它可以通过共享大幅度地减少单个实例的数目，避免了大量非常相似类的开销。.<br>享元模式是一个类别的多个对象共享这个类别的一个对象，而不是各自再实例化各自的对象。这样就达到了节省内存的目的。<br>（7）代理模式 Proxy<br>为其他对象提供一种代理，并由代理对象控制对原对象的引用，以间接控制对原对象的访问。</p>
+<p>4.java类的加载过程：加载，验证，准备，解析，初始化。</p>
+<p>5.在调用子类构造器之前，会先调用父类构造器，当子类构造器中没有使用”super(参数或无参数)”指定调用父类构造器时，是默认调用父类的无参构造器，如果父类中包含有参构造器，却没有无参构造器，则在子类构造器中一定要使用“super(参数)”指定调用父类的有参构造器，不然就会报错。</p>
+<p>6.start()方法来启动线程，真正实现了多线程运行。<br>通过调用Thread类的start()方法来启动一个线程，这时此线程处于就绪（可运行）状态，并没有运行，一旦得到cpu时间片，就开始执行run()方法。但要注意的是，此时无需等待run()方法执行完毕，即可继续执行下面的代码。所以run()方法并没有实现多线程。<br>run()方法只是类的一个普通方法而已，如果直接调用Run方法，程序中依然只有主线程这一个线程，其程序执行路径还是只有一条，还是要顺序执行，还是要等待run方法体执行完毕后才可继续执行下面的代码。</p>
+<hr>
+<p>2017-10-04</p>
+<p>1.在一个构造方法中调用该类的另一个构造方法，用this(x)。</p>
+<p>2.静态块和构造块的执行顺序：</p>
+<p>一个栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public class B</div><div class="line">&#123;</div><div class="line">    public static B t1 = new B();</div><div class="line">    public static B t2 = new B();</div><div class="line">    &#123;</div><div class="line">        System.out.println(&quot;构造块&quot;);</div><div class="line">    &#125;</div><div class="line">    static</div><div class="line">    &#123;</div><div class="line">        System.out.println(&quot;静态块&quot;);</div><div class="line">    &#125;</div><div class="line">    public static void main(String[] args)</div><div class="line">    &#123;</div><div class="line">        B t = new B();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出为：构造块 构造块 静态块 构造块</p>
+<p>解释：</p>
+<p>静态块：用static申明，JVM加载类时执行，仅执行一次；<br>构造块：类中直接用{}定义，每一次创建对象时执行；<br>执行顺序优先级：静态块&gt;main()&gt;构造块&gt;构造方法；<br>静态块按照声明顺序执行，所以先执行<code>publicstaticB t1 = newB();</code>该语句创建对象，则又会调用构造块，输出构造块；<br>接着执行public static B t1 = new B();输出构造块；<br>再执行<code>static{System.out.println(&quot;静态块&quot;);}</code>输出静态块；<br>最后main方法执行，创建对象，输出构造块。</p>
+<p>3.synchronized既可以保证可见性，又可以保证原子性，而volatile不能保证原子性；<br>ThreadLocal用于创建线程的本地变量，该变量是线程之间不共享的。</p>
+<hr>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/05/java笔记-做题点VI/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          java笔记-做题点VI
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/01/java学习-sql语句/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java学习-sql语句&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>
