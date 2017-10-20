@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java笔记-做题点VIII - xqcheese&#39;s station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="java专项练习记录点第八弹。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java笔记-做题点VIII">
+<meta property="og:url" content="http://yoursite.com/2017/10/20/java笔记-做题点VIII/index.html">
+<meta property="og:site_name" content="xqcheese's station">
+<meta property="og:description" content="java专项练习记录点第八弹。">
+<meta property="og:updated_time" content="2017-10-20T05:43:39.425Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java笔记-做题点VIII">
+<meta name="twitter:description" content="java专项练习记录点第八弹。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="css/thplayer.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-java笔记-做题点VIII" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java笔记-做题点VIII
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/10/20/java笔记-做题点VIII/" class="article-date">
+  <time datetime="2017-10-19T16:00:00.000Z" itemprop="datePublished">2017-10-20</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java专项练习记录点第八弹。</p>
+<a id="more"></a>
+<hr>
+<p>1.内部类可以是静态static的，也可用public，default，protected和private修饰；<br>外部类的修饰符只能是public，abstract，final。</p>
+<p>2.Java一个源程序只能有一个public类存在，且类名与文件名相同。<br>Java程序是从main方法开始执行的，public为类加载器提供入口，然后找到public类中的main方法开始执行。如果存在多个public类，程序将不知道该从哪里执行。</p>
+<p>3.一个题，很绕的题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;  </div><div class="line">    public static void main(String [] args)&#123;  </div><div class="line">        System.out.println(new B().getValue());  </div><div class="line">    &#125;  </div><div class="line">    static class A&#123;  </div><div class="line">        protected int value;  </div><div class="line">        public A(int v) &#123;  </div><div class="line">            setValue(v);  </div><div class="line">        &#125;  </div><div class="line">        public void setValue(int value)&#123;  </div><div class="line">            this.value = value;  </div><div class="line">        &#125;  </div><div class="line">        public int getValue()&#123;  </div><div class="line">            try&#123;  </div><div class="line">                value++;  </div><div class="line">                return value;  </div><div class="line">            &#125; catch(Exception e)&#123;  </div><div class="line">                System.out.println(e.toString());  </div><div class="line">            &#125; finally &#123;  </div><div class="line">                this.setValue(value);  </div><div class="line">                System.out.println(value);  </div><div class="line">            &#125;  </div><div class="line">            return value;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    static class B extends A&#123;  </div><div class="line">        public B() &#123;  </div><div class="line">            super(5);  </div><div class="line">            setValue(getValue() - 3);  </div><div class="line">        &#125;  </div><div class="line">        public void setValue(int value)&#123;  </div><div class="line">            super.setValue(2 * value);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>答案是：22 34 17</p>
+<p>详细的步骤见一个解释的很详细的博客：<a href="http://blog.csdn.net/zhumintao/article/details/53818972" target="_blank" rel="external">http://blog.csdn.net/zhumintao/article/details/53818972</a></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br><br></h2>
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/16/java笔记-做题点VII/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java笔记-做题点VII&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+<div id="Thplayer"></div>
+<script type="application/javascript" src="js/thplayer.min.js"></script>
+<script>
+    $("#Thplayer").thplayer({
+           title: "燕归巢",
+           author: "张杰＆张靓颖",
+           cover: "http://p4.music.126.net/gYwk-n_UWAtOfDZBEV04dQ==/7699879929738059.jpg",
+           music: "http://p2.music.126.net/bunDefkBnWf_XekMxxdLNA==/19147994997736977.mp3"
+    });
+</script>
+</body>
+</html>
