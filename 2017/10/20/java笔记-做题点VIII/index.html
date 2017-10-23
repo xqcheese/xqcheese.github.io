@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/20/java笔记-做题点VIII/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="java专项练习记录点第八弹。关于表示路径的方法、代码初始化过程、构造方法等。">
-<meta property="og:updated_time" content="2017-10-23T03:14:57.229Z">
+<meta property="og:updated_time" content="2017-10-23T03:20:29.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-做题点VIII">
 <meta name="twitter:description" content="java专项练习记录点第八弹。关于表示路径的方法、代码初始化过程、构造方法等。">
@@ -99,10 +99,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">class X&#123;</div><div class="line">    Y y=new Y();</div><div class="line">    public X()&#123;</div><div class="line">        System.out.print(&quot;X&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">class Y&#123;</div><div class="line">    public Y()&#123;</div><div class="line">        System.out.print(&quot;Y&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class Z extends X&#123;</div><div class="line">    Y y=new Y();</div><div class="line">    public Z()&#123;</div><div class="line">        System.out.print(&quot;Z&quot;);</div><div class="line">    &#125;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        new Z();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>初始化过程： </p>
 <ol>
-<li>初始化父类中的静态成员变量和静态代码块 ； </li>
+<li>初始化父类中的静态成员变量和静态代码块 ；</li>
 <li>初始化子类中的静态成员变量和静态代码块 ；<br>3.初始化父类的普通成员变量和代码块，再执行父类的构造方法；<br>4.初始化子类的普通成员变量和代码块，再执行子类的构造方法； </li>
 </ol>
-<p>（1）初始化父类的普通成员变量和代码块，执行  Y y=new Y();  输出Y<br>（2）再执行父类的构造方法；输出X<br>（3） 初始化子类的普通成员变量和代码块，执行  Y y=new   Y();  输出Y<br>（4）再执行子类的构造方法；输出Z<br>所以输出YXYZ</p>
+<p>（1）初始化父类的普通成员变量和代码块，执行  Y y=new Y();  输出Y<br>（2）再执行父类的构造方法；输出X<br>（3） 初始化子类的普通成员变量和代码块，执行  Y y=new   Y();  输出Y<br>（4）再执行子类的构造方法；输出Z</p>
+<p>所以输出YXYZ</p>
 <p>3.关于构造方法：</p>
 <p>构造方法的优先级一般比代码块低；<br>一般在创建新对象时，系统会自动调用构造方法；<br>构造方法的主要作用是完成对类的对象的初始化工作；<br>构造方法无返回类型。</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><br><br></h2>
