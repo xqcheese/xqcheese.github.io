@@ -5,16 +5,16 @@
   
   <title>java笔记-做题点V - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。">
+  <meta name="description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程、静态块和构造块的执行顺序等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java笔记-做题点V">
 <meta property="og:url" content="http://yoursite.com/2017/10/02/java笔记-做题点V/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。">
-<meta property="og:updated_time" content="2017-10-16T03:05:52.927Z">
+<meta property="og:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程、静态块和构造块的执行顺序等。">
+<meta property="og:updated_time" content="2017-10-23T03:15:40.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-做题点V">
-<meta name="twitter:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。">
+<meta name="twitter:description" content="java专项练习模糊点第五弹。包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程、静态块和构造块的执行顺序等。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,7 +82,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>java专项练习模糊点第五弹。<br>包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程等。</p>
+        <p>java专项练习模糊点第五弹。<br>包括垃圾回收机制、正则表达式的贪婪与非贪婪匹配、构造函数、结构型模式、java类的加载过程、静态块和构造块的执行顺序等。</p>
 <a id="more"></a>
 <hr>
 <p>1.垃圾回收：</p>
@@ -114,7 +114,7 @@
 <p>输出为：构造块 构造块 静态块 构造块</p>
 <p>解释：</p>
 <p>静态块：用static申明，JVM加载类时执行，仅执行一次；<br>构造块：类中直接用{}定义，每一次创建对象时执行；<br>执行顺序优先级：静态块&gt;main()&gt;构造块&gt;构造方法；<br>静态块按照声明顺序执行，所以先执行<code>publicstaticB t1 = newB();</code>该语句创建对象，则又会调用构造块，输出构造块；<br>接着执行public static B t1 = new B();输出构造块；<br>再执行<code>static{System.out.println(&quot;静态块&quot;);}</code>输出静态块；<br>最后main方法执行，创建对象，输出构造块。</p>
-<p>3.synchronized既可以保证可见性，又可以保证原子性，而volatile不能保证原子性；<br>ThreadLocal用于创建线程的本地变量，该变量是线程之间不共享的。</p>
+<p>3.synchronized既可以保证可见性，又可以保证原子性，而volatile不能保证原子性，但对volatile变量的操作不会造成阻塞；<br>ThreadLocal用于创建线程的本地变量，该变量是线程之间不共享的。</p>
 <hr>
 
       

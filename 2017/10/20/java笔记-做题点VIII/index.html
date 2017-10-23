@@ -5,16 +5,16 @@
   
   <title>java笔记-做题点VIII - xqcheese&#39;s station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java专项练习记录点第八弹。">
+  <meta name="description" content="java专项练习记录点第八弹。关于表示路径的方法、代码初始化过程、构造方法等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java笔记-做题点VIII">
 <meta property="og:url" content="http://yoursite.com/2017/10/20/java笔记-做题点VIII/index.html">
 <meta property="og:site_name" content="xqcheese's station">
-<meta property="og:description" content="java专项练习记录点第八弹。">
-<meta property="og:updated_time" content="2017-10-20T05:43:39.425Z">
+<meta property="og:description" content="java专项练习记录点第八弹。关于表示路径的方法、代码初始化过程、构造方法等。">
+<meta property="og:updated_time" content="2017-10-23T03:14:57.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-做题点VIII">
-<meta name="twitter:description" content="java专项练习记录点第八弹。">
+<meta name="twitter:description" content="java专项练习记录点第八弹。关于表示路径的方法、代码初始化过程、构造方法等。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,7 +82,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>java专项练习记录点第八弹。</p>
+        <p>java专项练习记录点第八弹。关于表示路径的方法、代码初始化过程、构造方法等。</p>
 <a id="more"></a>
 <hr>
 <p>1.内部类可以是静态static的，也可用public，default，protected和private修饰；<br>外部类的修饰符只能是public，abstract，final。</p>
@@ -91,6 +91,20 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;  </div><div class="line">    public static void main(String [] args)&#123;  </div><div class="line">        System.out.println(new B().getValue());  </div><div class="line">    &#125;  </div><div class="line">    static class A&#123;  </div><div class="line">        protected int value;  </div><div class="line">        public A(int v) &#123;  </div><div class="line">            setValue(v);  </div><div class="line">        &#125;  </div><div class="line">        public void setValue(int value)&#123;  </div><div class="line">            this.value = value;  </div><div class="line">        &#125;  </div><div class="line">        public int getValue()&#123;  </div><div class="line">            try&#123;  </div><div class="line">                value++;  </div><div class="line">                return value;  </div><div class="line">            &#125; catch(Exception e)&#123;  </div><div class="line">                System.out.println(e.toString());  </div><div class="line">            &#125; finally &#123;  </div><div class="line">                this.setValue(value);  </div><div class="line">                System.out.println(value);  </div><div class="line">            &#125;  </div><div class="line">            return value;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    static class B extends A&#123;  </div><div class="line">        public B() &#123;  </div><div class="line">            super(5);  </div><div class="line">            setValue(getValue() - 3);  </div><div class="line">        &#125;  </div><div class="line">        public void setValue(int value)&#123;  </div><div class="line">            super.setValue(2 * value);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>答案是：22 34 17</p>
 <p>详细的步骤见一个解释的很详细的博客：<a href="http://blog.csdn.net/zhumintao/article/details/53818972" target="_blank" rel="external">http://blog.csdn.net/zhumintao/article/details/53818972</a></p>
+<hr>
+<p>2017-10-23</p>
+<p>1.表示路径的方法：<code>c:\\my\\1.txt</code> = <code>c:/my/1.txt</code> 。</p>
+<p><code>./</code>表示当前项目的路径；<br><code>../</code>表示当前目录的父目录路径；<br>盘符：<code>\\name\\file</code> 或者 盘符：<code>/name/file</code>表示物理路径。</p>
+<p>2.来来来，一个关于整个代码初始化过程的栗子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">class X&#123;</div><div class="line">    Y y=new Y();</div><div class="line">    public X()&#123;</div><div class="line">        System.out.print(&quot;X&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">class Y&#123;</div><div class="line">    public Y()&#123;</div><div class="line">        System.out.print(&quot;Y&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class Z extends X&#123;</div><div class="line">    Y y=new Y();</div><div class="line">    public Z()&#123;</div><div class="line">        System.out.print(&quot;Z&quot;);</div><div class="line">    &#125;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        new Z();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>初始化过程： </p>
+<ol>
+<li>初始化父类中的静态成员变量和静态代码块 ； </li>
+<li>初始化子类中的静态成员变量和静态代码块 ；<br>3.初始化父类的普通成员变量和代码块，再执行父类的构造方法；<br>4.初始化子类的普通成员变量和代码块，再执行子类的构造方法； </li>
+</ol>
+<p>（1）初始化父类的普通成员变量和代码块，执行  Y y=new Y();  输出Y<br>（2）再执行父类的构造方法；输出X<br>（3） 初始化子类的普通成员变量和代码块，执行  Y y=new   Y();  输出Y<br>（4）再执行子类的构造方法；输出Z<br>所以输出YXYZ</p>
+<p>3.关于构造方法：</p>
+<p>构造方法的优先级一般比代码块低；<br>一般在创建新对象时，系统会自动调用构造方法；<br>构造方法的主要作用是完成对类的对象的初始化工作；<br>构造方法无返回类型。</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><br><br></h2>
       
     </div>
