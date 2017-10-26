@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/16/java笔记-做题点VII/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="java专项练习记录点第七弹。包括java命令、关于run()和start()的一个栗子、几种获取语句、java回收算法等。">
-<meta property="og:updated_time" content="2017-10-18T14:38:03.677Z">
+<meta property="og:updated_time" content="2017-10-26T02:26:26.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-做题点VII">
 <meta name="twitter:description" content="java专项练习记录点第七弹。包括java命令、关于run()和start()的一个栗子、几种获取语句、java回收算法等。">
@@ -106,7 +106,7 @@
 <hr>
 <p>2017-10-18</p>
 <p>1.三个与取整有关的方法：</p>
-<p>ceil,floor,round,这些方法的作用于它们的英文名称的含义相对应，例如：ceil的英文意义是天花板，该方法就表示向上取整，Math.ceil（11.3）的结果为12，Math.ceil(-11.6)的结果为-11；floor的英文是地板，该方法就表示向下取整，Math.floor(11.6)的结果是11，Math.floor(-11.4)的结果-12；最难掌握的是round方法，他表示“四舍五入”，算法为Math.floor(x+0.5),即将原来的数字加上0.5后再向下取整。</p>
+<p>ceil,floor,round,这些方法的作用于它们的英文名称的含义相对应，例如：ceil的英文意义是天花板，该方法就表示向上取整，Math.ceil（11.3）的结果为12，Math.ceil(-11.6)的结果为-11【注：Math.ceil（-0.5）的结果为-0.0】；floor的英文是地板，该方法就表示向下取整，Math.floor(11.6)的结果是11，Math.floor(-11.4)的结果-12；最难掌握的是round方法，他表示“四舍五入”，算法为Math.floor(x+0.5),即将原来的数字加上0.5后再向下取整。</p>
 <p>2.一个栗子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public class TestClass &#123;</div><div class="line">   private static void testMethod()&#123;</div><div class="line">        System.out.println(&quot;testMethod&quot;);</div><div class="line">   &#125;</div><div class="line">   public static void main(String[] args) &#123;</div><div class="line">        ((TestClass)null).testMethod();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>运行正常，输出testMethod</p>
