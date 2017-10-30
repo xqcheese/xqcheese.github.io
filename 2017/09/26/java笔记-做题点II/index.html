@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/26/java笔记-做题点II/index.html">
 <meta property="og:site_name" content="xqcheese's station">
 <meta property="og:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
-<meta property="og:updated_time" content="2017-10-16T03:05:10.438Z">
+<meta property="og:updated_time" content="2017-10-30T11:47:53.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记-做题点II">
 <meta name="twitter:description" content="java专项练习模糊点第二弹。包括异常的捕获与处理、Hashtable和HashMap、数组的创建等。">
@@ -105,7 +105,9 @@
 <p>会输出：<br>It is in final chunk.<br>2</p>
 <p>如果注释掉finally里的<code>return a;</code><br>则输出：<br>It is in final chunk.<br>1</p>
 <p>即finally是在return后面的表达式运算后执行的（此时并没有返回运算后的值，而是先把要返回的值保存起来，不管finally中的代码怎么样，返回的值都不会改变，仍然是之前保存的值），所以函数返回值是在finally执行前确定的；</p>
+<p>finally语句块在catch语句块中的return语句之前执行；</p>
 <p>所以finally中最好不要包含return，否则程序会提前退出，返回值不是try或catch中保存的返回值。</p>
+<p>在try语句块或catch语句块中执行到System.exit(0)直接退出程序。</p>
 <hr>
 
       
